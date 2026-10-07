@@ -1,220 +1,361 @@
 <title>Pauta de Atividades D&amp;A</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: cabeçalho + faixa de indicadores + três visões (quadro de prioridades, agenda semanal, frentes) */
+/* DDI · Data & Decision Intelligence — tokens do Cortex. Layout: barra de marca + indicadores + três visões (prioridades, agenda, frentes) */
 :root {
-  --bg: #f2f3f7;
-  --surface: #ffffff;
-  --surface-2: #e9ecf3;
-  --ink: #151a26;
-  --muted: #586078;
-  --line: #d8dce6;
-  --accent: #2443cf;
-  --accent-ink: #ffffff;
-  --accent-soft: #e2e7fb;
-  --p1: #bf2a2a; --p1-soft: #fbe4e2;
-  --p2: #b8620a; --p2-soft: #fbecd8;
-  --p3: #1d7768; --p3-soft: #daf0ea;
-  --p4: #667085; --p4-soft: #eceef2;
-  --shadow: 0 1px 2px rgba(21,26,38,.06), 0 4px 14px rgba(21,26,38,.05);
-  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --ground: #FBFAFC; --surface: #FFFFFF; --surface-2: #F6F5F8; --ink: #1D1B21; --ink-2: #43404A;
+  --muted: #6C6873; --faint: #9B97A2; --line: #E9E7EC; --line-2: #F1F0F4;
+  --accent: #E00076; --accent-ink: #B0005E; --accent-wash: #FBEAF2; --on-accent: #FFFFFF;
+  --blue: #1592C4; --blue-wash: #E7F3F9;
+  --good: #3F7A2E; --good-wash: #EBF3E5; --warn: #87620A; --warn-wash: #FAF2DA; --crit: #AF2018; --crit-wash: #FBE7E4;
+  --shadow: 0 1px 2px rgba(29,27,33,.04), 0 4px 16px rgba(29,27,33,.05);
+  --radius: 12px; --radius-sm: 8px;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --sans: "Titillium Web", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0e1119; --surface: #161a25; --surface-2: #1d2230; --ink: #e6e8ef; --muted: #99a0b3; --line: #2a3041;
-    --accent: #8197ff; --accent-ink: #0e1119; --accent-soft: #222b50;
-    --p1: #ff7f76; --p1-soft: #3a1c1d; --p2: #f2a352; --p2-soft: #392916; --p3: #52c8b4; --p3-soft: #14302b; --p4: #a3a9b7; --p4-soft: #242936;
-    --shadow: 0 1px 2px rgba(0,0,0,.4);
+    --ground: #17161A; --surface: #1E1C22; --surface-2: #26242C; --ink: #EDEBF0; --ink-2: #C9C5D0;
+    --muted: #A29EAA; --faint: #78737F; --line: #2E2B34; --line-2: #2A2833;
+    --accent: #FF3D97; --accent-ink: #FF7FBB; --accent-wash: #331020; --on-accent: #17161A;
+    --blue: #63C0E8; --blue-wash: #14263A;
+    --good: #8FCC6E; --good-wash: #16240F; --warn: #E3B94A; --warn-wash: #2A2410; --crit: #F0908B; --crit-wash: #2E1614;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0e1119; --surface: #161a25; --surface-2: #1d2230; --ink: #e6e8ef; --muted: #99a0b3; --line: #2a3041;
-  --accent: #8197ff; --accent-ink: #0e1119; --accent-soft: #222b50;
-  --p1: #ff7f76; --p1-soft: #3a1c1d; --p2: #f2a352; --p2-soft: #392916; --p3: #52c8b4; --p3-soft: #14302b; --p4: #a3a9b7; --p4-soft: #242936;
-  --shadow: 0 1px 2px rgba(0,0,0,.4);
+  --ground: #17161A; --surface: #1E1C22; --surface-2: #26242C; --ink: #EDEBF0; --ink-2: #C9C5D0;
+  --muted: #A29EAA; --faint: #78737F; --line: #2E2B34; --line-2: #2A2833;
+  --accent: #FF3D97; --accent-ink: #FF7FBB; --accent-wash: #331020; --on-accent: #17161A;
+  --blue: #63C0E8; --blue-wash: #14263A;
+  --good: #8FCC6E; --good-wash: #16240F; --warn: #E3B94A; --warn-wash: #2A2410; --crit: #F0908B; --crit-wash: #2E1614;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.45; }
-.wrap { max-width: 1320px; margin: 0 auto; padding-inline: clamp(16px, 3vw, 32px); padding-block: 24px 64px; display: flex; flex-direction: column; gap: 20px; }
+body { background: var(--ground); color: var(--ink); font-family: var(--sans); font-size: 14px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+::selection { background: var(--accent-wash); }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 
-/* Cabeçalho */
-header.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
-.eyebrow { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.05; margin: 4px 0 0; letter-spacing: -.01em; text-wrap: balance; }
-.lede { color: var(--muted); margin: 6px 0 0; max-width: 62ch; }
+/* Barra de marca */
+.brandbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.brandbar .in { max-width: 1320px; margin: 0 auto; padding-inline: clamp(16px, 3vw, 32px); padding-block: 12px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.logo { line-height: 0; }
+.logo svg { height: 34px; width: auto; display: block; }
+.logo-dark { display: none; }
+:root[data-theme="dark"] .logo-light { display: none; } :root[data-theme="dark"] .logo-dark { display: block; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-light { display: none; } :root:not([data-theme="light"]) .logo-dark { display: block; } }
+.brandbar .unit { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .2px; margin-left: auto; text-align: right; }
+
+.wrap { max-width: 1320px; margin: 0 auto; padding-inline: clamp(16px, 3vw, 32px); padding-block: 22px 64px; display: flex; flex-direction: column; gap: 18px; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); }
+h1 { font-weight: 700; font-size: clamp(24px, 3vw, 30px); line-height: 1.1; margin: 2px 0 0; letter-spacing: -.3px; text-wrap: balance; }
+.lede { color: var(--muted); margin: 4px 0 0; max-width: 66ch; font-size: 13.5px; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.btn { border: 1px solid var(--line); background: var(--surface); padding: 8px 14px; border-radius: 8px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
-.btn:hover { border-color: var(--muted); }
-.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-.btn.primary:hover { filter: brightness(1.08); }
-.btn.danger { color: var(--p1); }
-.btn.danger.armed { background: var(--p1); color: var(--surface); border-color: var(--p1); }
+.btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: var(--radius-sm); padding: 7px 12px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+.btn:hover { border-color: var(--faint); }
+.btn.pri { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.pri:hover { background: var(--accent-ink); border-color: var(--accent-ink); }
+.btn.sm { padding: 4px 9px; font-size: 12px; }
+.btn.danger { color: var(--crit); }
+.btn.danger.armed { background: var(--crit); color: var(--surface); border-color: var(--crit); }
 
 /* Indicadores */
-.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.kpi { background: var(--surface); padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.kpi .v { font-family: var(--f-display); font-size: 28px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.1; }
-.kpi .l { color: var(--muted); font-size: 12.5px; }
-.kpi.alert .v { color: var(--p1); }
-.kpi.todo .v { color: var(--p2); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 13px 15px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.kpi .l { font-size: 10.5px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
+.kpi .v { font-size: 24px; font-weight: 700; letter-spacing: -.5px; font-variant-numeric: tabular-nums; line-height: 1.15; }
+.kpi .s { font-size: 11.5px; color: var(--muted); }
+.kpi.alert .v { color: var(--crit); }
+.kpi.todo .v { color: var(--accent-ink); }
 
 /* Abas */
 .tabs-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
-.tabs { display: inline-flex; background: var(--surface-2); border-radius: 10px; padding: 3px; gap: 2px; flex-wrap: wrap; }
-.tab { border: 0; background: transparent; padding: 7px 14px; border-radius: 8px; font-weight: 500; color: var(--muted); }
-.tab[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
-.hint { color: var(--muted); font-size: 12.5px; }
+.tabs { display: inline-flex; background: var(--line-2); border: 1px solid var(--line); border-radius: 999px; padding: 2px; gap: 2px; flex-wrap: wrap; }
+.tab { border: 0; background: transparent; padding: 6px 14px; border-radius: 999px; font-weight: 600; font-size: 13px; color: var(--muted); }
+.tab[aria-selected="true"] { background: var(--surface); color: var(--accent-ink); box-shadow: var(--shadow); }
+.hint { color: var(--muted); font-size: 12px; }
 
 /* Quadro de priorização */
 .board { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; align-items: start; }
-.col { background: var(--surface-2); border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 8px; min-height: 140px; min-width: 0; border: 1px dashed transparent; }
-.col.drop { border-color: var(--accent); background: var(--accent-soft); }
+.col { background: var(--surface-2); border: 1px dashed transparent; border-radius: var(--radius); padding: 10px; display: flex; flex-direction: column; gap: 8px; min-height: 140px; min-width: 0; }
+.col.drop { border-color: var(--accent); background: var(--accent-wash); }
 .col-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 2px 4px 4px; }
-.col-head h3 { margin: 0; font-family: var(--f-display); font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 7px; }
-.col-head .sub { color: var(--muted); font-size: 12px; }
-.col-head .sum { font-family: var(--f-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
-.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); flex: none; }
-.dot.P1 { background: var(--p1); } .dot.P2 { background: var(--p2); } .dot.P3 { background: var(--p3); } .dot.P4 { background: var(--p4); }
-.dot.none { background: transparent; border: 2px solid var(--muted); }
-.col-empty { color: var(--muted); font-size: 12.5px; padding: 14px 6px; text-align: center; }
+.col-head h3 { margin: 0; font-size: 14.5px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
+.col-head .sub { color: var(--muted); font-size: 11.5px; }
+.col-head .sum { font-family: var(--mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); flex: none; display: inline-block; }
+.dot.P1 { background: var(--crit); } .dot.P2 { background: var(--warn); } .dot.P3 { background: var(--blue); } .dot.P4 { background: var(--faint); }
+.dot.none { background: transparent; border: 2px solid var(--accent); }
+.col-empty { color: var(--faint); font-size: 12.5px; padding: 14px 6px; text-align: center; }
 
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 11px; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow); min-width: 0; }
 .card[draggable="true"] { cursor: grab; }
 .card.dragging { opacity: .45; }
 .card.done h4 { text-decoration: line-through; color: var(--muted); }
-.card-top { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: space-between; }
+.card-top { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; justify-content: space-between; }
 .card h4 { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
 .card h4 button { all: unset; cursor: pointer; }
-.card h4 button:hover { text-decoration: underline; text-underline-offset: 2px; }
-.meta { display: flex; flex-wrap: wrap; gap: 4px 10px; color: var(--muted); font-size: 12px; font-family: var(--f-mono); }
-.chip { font-size: 11px; font-weight: 500; padding: 2px 7px; border-radius: 999px; background: var(--surface-2); color: var(--muted); white-space: nowrap; }
-.chip.tipo-reuniao { background: var(--accent-soft); color: var(--accent); }
-.chip.tipo-entrega { background: var(--p3-soft); color: var(--p3); }
-.chip.st-bloqueada, .chip.conflict { background: var(--p1-soft); color: var(--p1); }
-.chip.st-andamento { background: var(--p2-soft); color: var(--p2); }
-.chip.st-concluida { background: var(--p3-soft); color: var(--p3); }
-.chip.st-agendar { background: var(--p4-soft); color: var(--muted); border: 1px dashed var(--line); }
-.chip.pr { font-family: var(--f-mono); }
-.chip.pr.P1 { background: var(--p1-soft); color: var(--p1); } .chip.pr.P2 { background: var(--p2-soft); color: var(--p2); }
-.chip.pr.P3 { background: var(--p3-soft); color: var(--p3); } .chip.pr.P4 { background: var(--p4-soft); color: var(--p4); }
-.frente { font-size: 11.5px; color: var(--muted); overflow-wrap: anywhere; }
-.nota { margin: 0; font-size: 12.5px; background: var(--surface-2); border-radius: 6px; padding: 6px 8px; overflow-wrap: anywhere; }
-.nota b { font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); display: block; }
-.card-ctl { display: flex; gap: 4px; align-items: center; border-top: 1px solid var(--line); padding-top: 7px; margin-top: 2px; }
-.card-ctl select { flex: 1; min-width: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 4px 6px; font-size: 12.5px; }
-.icon-btn { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; width: 28px; height: 28px; display: inline-grid; place-items: center; font-size: 13px; color: var(--muted); padding: 0; }
-.icon-btn:hover:not(:disabled) { color: var(--ink); border-color: var(--muted); }
+.card h4 button:hover { color: var(--accent-ink); }
+.card h4 button:focus-visible { outline: 2px solid var(--accent); }
+.meta { display: flex; flex-wrap: wrap; gap: 3px 10px; color: var(--muted); font-size: 11.5px; font-family: var(--mono); }
+.frente { font-size: 11.5px; color: var(--muted); overflow-wrap: anywhere; font-weight: 600; }
+.chip { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .3px; padding: 2px 7px; border-radius: 5px; background: var(--line-2); color: var(--muted); white-space: nowrap; }
+.chip.tipo-reuniao { background: var(--blue-wash); color: var(--blue); }
+.chip.tipo-entrega { background: var(--accent-wash); color: var(--accent-ink); }
+.pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 650; padding: 2px 8px; border-radius: 999px; white-space: nowrap; background: var(--line-2); color: var(--muted); }
+.pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.pill.st-andamento { background: var(--warn-wash); color: var(--warn); }
+.pill.st-concluida { background: var(--good-wash); color: var(--good); }
+.pill.st-bloqueada, .pill.conflict, .pill.over { background: var(--crit-wash); color: var(--crit); }
+.pill.st-planejada { background: var(--blue-wash); color: var(--blue); }
+.chip.pr { font-family: var(--mono); }
+.chip.pr.P1 { background: var(--crit-wash); color: var(--crit); } .chip.pr.P2 { background: var(--warn-wash); color: var(--warn); }
+.chip.pr.P3 { background: var(--blue-wash); color: var(--blue); } .chip.pr.P4 { background: var(--line-2); color: var(--muted); }
+.nota { margin: 0; font-size: 12.5px; background: var(--accent-wash); color: var(--ink); border-radius: 6px; padding: 6px 8px; overflow-wrap: anywhere; }
+.nota b { font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: .6px; color: var(--accent-ink); display: block; }
+.card-ctl { display: flex; gap: 4px; align-items: center; border-top: 1px solid var(--line-2); padding-top: 7px; margin-top: 2px; }
+.card-ctl select { flex: 1; min-width: 0; border: 1px solid var(--line); background: var(--surface-2); border-radius: 6px; padding: 4px 6px; font-size: 12.5px; }
+.icon-btn { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; width: 28px; height: 28px; display: inline-grid; place-items: center; font-size: 13px; color: var(--muted); padding: 0; flex: none; }
+.icon-btn:hover:not(:disabled) { color: var(--ink); border-color: var(--faint); }
 .icon-btn:disabled { opacity: .35; cursor: default; }
 
 /* Agenda */
 .week-nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.week-nav .label { font-family: var(--f-display); font-weight: 600; font-size: 16px; padding: 0 6px; }
-.week { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; align-items: start; }
-.day { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; min-width: 0; }
+.week-nav .label { font-weight: 700; font-size: 16px; padding: 0 6px; }
+.week { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; align-items: start; }
+.day { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; min-width: 0; box-shadow: var(--shadow); }
 .day.today { border-color: var(--accent); }
-.day-head { display: flex; justify-content: space-between; align-items: baseline; padding: 9px 12px; background: var(--surface-2); gap: 8px; }
-.day.today .day-head { background: var(--accent-soft); }
-.day-head b { font-family: var(--f-display); font-weight: 600; font-size: 14.5px; }
-.day-head span { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.day-head { padding: 9px 12px 8px; background: var(--surface-2); display: flex; flex-direction: column; gap: 6px; }
+.day.today .day-head { background: var(--accent-wash); }
+.day-head .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.day-head b { font-weight: 700; font-size: 14.5px; }
+.day-head .cap { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.day-head .cap.over { color: var(--crit); font-weight: 500; }
+.capbar { height: 5px; border-radius: 3px; background: var(--line); overflow: hidden; display: flex; }
+.capbar i { display: block; height: 100%; background: var(--accent); }
+.capbar i.flex { background: var(--accent); opacity: .4; }
+.capbar.over i { background: var(--crit); }
 .slots { display: flex; flex-direction: column; }
-.slot { display: grid; grid-template-columns: 52px 1fr; gap: 8px; padding: 9px 12px; border-top: 1px solid var(--line); text-align: left; background: none; border-left: 0; border-right: 0; border-bottom: 0; width: 100%; }
+.slot { display: grid; grid-template-columns: 54px 1fr; gap: 8px; padding: 9px 12px; border: 0; border-top: 1px solid var(--line-2); text-align: left; background: none; width: 100%; }
 .slot:first-child { border-top: 0; }
 .slot:hover { background: var(--surface-2); }
-.slot .t { font-family: var(--f-mono); font-size: 12px; color: var(--muted); line-height: 1.35; }
+.slot .t { font-family: var(--mono); font-size: 11.5px; color: var(--muted); line-height: 1.35; }
 .slot .t b { color: var(--ink); font-weight: 500; display: block; }
 .slot .what { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .slot .what strong { font-weight: 600; font-size: 13px; line-height: 1.3; overflow-wrap: anywhere; }
 .slot .tags { display: flex; flex-wrap: wrap; gap: 4px; }
-.slot.conf { background: var(--p1-soft); }
-.day-empty { padding: 14px 12px; color: var(--muted); font-size: 12.5px; }
-.undated { display: flex; flex-direction: column; gap: 10px; }
-.undated h3, .section-title { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: 17px; }
+.slot.conf { background: var(--crit-wash); }
+.slot.flex .t { color: var(--accent-ink); }
+.day-empty { padding: 14px 12px; color: var(--faint); font-size: 12.5px; }
+.section-title { margin: 0; font-weight: 700; font-size: 16px; }
 .undated-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
 
 /* Frentes */
 .fronts { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
-.front { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.front { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .front-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
-.front-head h3 { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: 16px; overflow-wrap: anywhere; }
-.front-head .n { font-family: var(--f-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
-.bar { height: 8px; border-radius: 4px; background: var(--surface-2); display: flex; overflow: hidden; }
+.front-head h3 { margin: 0; font-weight: 700; font-size: 15.5px; overflow-wrap: anywhere; display: flex; gap: 8px; align-items: center; }
+.front-head .n { font-family: var(--mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.orb { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.bar { height: 7px; border-radius: 4px; background: var(--line-2); display: flex; overflow: hidden; }
 .bar i { display: block; height: 100%; }
-.bar i.P1 { background: var(--p1); } .bar i.P2 { background: var(--p2); } .bar i.P3 { background: var(--p3); } .bar i.P4 { background: var(--p4); } .bar i.none { background: var(--muted); opacity: .45; }
+.bar i.P1 { background: var(--crit); } .bar i.P2 { background: var(--warn); } .bar i.P3 { background: var(--blue); } .bar i.P4 { background: var(--faint); } .bar i.none { background: var(--accent); opacity: .35; }
 .front ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
-.front li button { all: unset; box-sizing: border-box; cursor: pointer; display: flex; gap: 8px; align-items: baseline; padding: 6px 0; border-top: 1px solid var(--line); width: 100%; }
+.front li button { all: unset; box-sizing: border-box; cursor: pointer; display: flex; gap: 8px; align-items: baseline; padding: 6px 0; border-top: 1px solid var(--line-2); width: 100%; }
 .front li:first-child button { border-top: 0; }
-.front li button:hover span.tt { text-decoration: underline; text-underline-offset: 2px; }
+.front li button:hover .tt { color: var(--accent-ink); }
 .front li button:focus-visible { outline: 2px solid var(--accent); }
 .front li .tt { flex: 1; min-width: 0; overflow-wrap: anywhere; }
-.front li .h { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
-.legend { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
+.front li .h { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 11.5px; }
 .legend span { display: inline-flex; align-items: center; gap: 5px; }
 
 /* Estados */
-.state { background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 28px 20px; text-align: center; color: var(--muted); }
-.state strong { color: var(--ink); display: block; font-family: var(--f-display); font-size: 17px; margin-bottom: 4px; }
-.readonly-note { background: var(--surface-2); border-radius: 8px; padding: 8px 12px; font-size: 13px; color: var(--muted); }
+.state { background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); padding: 28px 20px; text-align: center; color: var(--muted); }
+.state strong { color: var(--ink); display: block; font-size: 16px; margin-bottom: 4px; }
+.readonly-note { background: var(--blue-wash); color: var(--blue); border-radius: 8px; padding: 8px 12px; font-size: 13px; font-weight: 600; }
 
 /* Editor */
-dialog { border: 1px solid var(--line); border-radius: 14px; padding: 0; background: var(--surface); color: var(--ink); width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 32px); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
-dialog::backdrop { background: rgba(10,14,24,.45); }
+dialog { border: 1px solid var(--line); border-radius: 14px; padding: 0; background: var(--surface); color: var(--ink); width: min(680px, calc(100vw - 32px)); max-height: calc(100vh - 32px); box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+dialog::backdrop { background: rgba(20,22,30,.5); }
 .dlg { display: flex; flex-direction: column; max-height: calc(100vh - 34px); }
-.dlg-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px 10px; gap: 12px; }
-.dlg-head h2 { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: 20px; }
-.dlg-body { padding: 4px 20px 16px; overflow-y: auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
-.dlg-foot { display: flex; justify-content: space-between; gap: 8px; padding: 12px 20px 16px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.dlg-head { display: flex; justify-content: space-between; align-items: center; padding: 15px 18px; border-bottom: 1px solid var(--line); gap: 12px; }
+.dlg-head h2 { margin: 0; font-weight: 700; font-size: 16px; }
+.dlg-body { padding: 14px 18px 16px; overflow-y: auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.dlg-foot { display: flex; justify-content: space-between; gap: 8px; padding: 12px 18px 14px; border-top: 1px solid var(--line); flex-wrap: wrap; }
 .dlg-foot .r { display: flex; gap: 8px; margin-left: auto; }
 .field { display: flex; flex-direction: column; gap: 4px; grid-column: span 6; min-width: 0; }
-.field.s3 { grid-column: span 3; } .field.s2 { grid-column: span 2; }
-.field label { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
-.field input, .field select, .field textarea { border: 1px solid var(--line); background: var(--bg); border-radius: 8px; padding: 8px 10px; width: 100%; min-width: 0; }
-.field textarea { resize: vertical; min-height: 64px; }
-.field .help { font-size: 11.5px; color: var(--muted); }
-.field.director { background: var(--accent-soft); border-radius: 10px; padding: 10px; }
-.field.director label { color: var(--accent); }
-.field.director select, .field.director textarea { background: var(--surface); }
-.dir-grid { grid-column: span 6; display: grid; grid-template-columns: 1fr 2fr; gap: 10px; background: var(--accent-soft); border-radius: 10px; padding: 12px; }
-.dir-grid .cap { grid-column: 1 / -1; font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.field.s3 { grid-column: span 3; }
+.field > label, .blk-h { font-size: 11px; font-weight: 650; color: var(--muted); text-transform: uppercase; letter-spacing: .3px; }
+.field input, .field select, .field textarea, .blk input { background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; width: 100%; min-width: 0; font-size: 13px; }
+.field input:focus, .field select:focus, .field textarea:focus, .blk input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.field textarea { resize: vertical; min-height: 60px; }
+.help { font-size: 11.5px; color: var(--muted); }
+.blocks { grid-column: span 6; display: flex; flex-direction: column; gap: 6px; }
+.blk-head, .blk { display: grid; grid-template-columns: 1.5fr 1fr 1fr .8fr 28px; gap: 6px; align-items: center; }
+.blk-total { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.blocks .foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.dir-grid { grid-column: span 6; display: grid; grid-template-columns: 1fr 2fr; gap: 10px; background: var(--accent-wash); border-radius: 10px; padding: 12px; }
+.dir-grid .cap { grid-column: 1 / -1; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
 .dir-grid .field { grid-column: auto; }
-.dir-grid select, .dir-grid textarea { background: var(--surface) !important; }
+.dir-grid .field select, .dir-grid .field textarea { background: var(--surface); }
 @media (max-width: 560px) {
-  .field.s3, .field.s2 { grid-column: span 6; }
+  .field.s3 { grid-column: span 6; }
   .dir-grid { grid-template-columns: 1fr; }
+  .blk-head { display: none; }
+  .blk { grid-template-columns: 1fr 1fr 28px; }
+  .blk .bd { grid-column: 1 / 3; }
 }
 
-.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 9px 16px; border-radius: 8px; font-size: 13px; box-shadow: var(--shadow); z-index: 10; max-width: calc(100vw - 32px); }
-textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mono); font-size: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 10px; }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--surface); padding: 10px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; box-shadow: var(--shadow); z-index: 10; max-width: calc(100vw - 32px); }
+textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono); font-size: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 10px; }
 @media (prefers-reduced-motion: no-preference) { .card, .slot, .btn, .tab { transition: background-color .15s, border-color .15s, box-shadow .15s; } }
 </style>
+
+<div class="brandbar"><div class="in">
+  <span class="logo logo-light" role="img" aria-label="DDI · Data &amp; Decision Intelligence"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 766 260" width="766" height="260">
+  <defs>
+    <radialGradient id="coreGlow">
+      <stop offset="0%" stop-color="#E00076" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#E00076" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <g transform="translate(26,30)">
+      <path d="M 182.00,100.00 L 180.07,95.63 L 177.94,91.46 L 175.65,87.50 L 173.20,83.76 L 170.60,80.24 L 167.88,76.94 L 165.05,73.86 L 162.12,71.01 L 159.11,68.38 L 156.03,65.97 L 152.89,63.78 L 149.71,61.82 L 146.50,60.06 L 143.27,58.53 L 140.04,57.20 L 136.81,56.07 L 133.60,55.14 L 130.41,54.41 L 127.26,53.86 L 124.16,53.50 L 121.11,53.30 L 118.12,53.28 L 115.20,53.42 L 112.36,53.70 L 109.59,54.14 L 106.92,54.71 L 104.34,55.41 L 101.86,56.23 L 99.48,57.16 L 97.21,58.20 L 95.04,59.33 L 92.99,60.56 L 91.05,61.86 L 89.23,63.24 L 87.52,64.68 L 85.93,66.18 L 84.46,67.73 L 83.10,69.32 L 81.87,70.94 L 80.74,72.60 L 79.74,74.27 L 78.84,75.96 L 78.06,77.66 L 77.38,79.35 L 76.82,81.05 L 76.35,82.73 L 75.99,84.40 L 75.72,86.05" fill="none" stroke="#E00076" stroke-width="2.0" stroke-linecap="round" opacity="0.3"/>
+      <path d="M 157.98,42.02 L 153.52,40.29 L 149.07,38.85 L 144.65,37.67 L 140.27,36.76 L 135.95,36.10 L 131.69,35.69 L 127.51,35.52 L 123.43,35.57 L 119.44,35.84 L 115.55,36.32 L 111.79,36.99 L 108.15,37.85 L 104.64,38.88 L 101.27,40.08 L 98.05,41.42 L 94.97,42.91 L 92.04,44.52 L 89.27,46.26 L 86.65,48.10 L 84.20,50.03 L 81.91,52.06 L 79.78,54.15 L 77.81,56.31 L 76.00,58.53 L 74.35,60.79 L 72.87,63.08 L 71.54,65.40 L 70.36,67.73 L 69.34,70.08 L 68.47,72.42 L 67.74,74.75 L 67.15,77.07 L 66.71,79.36 L 66.39,81.62 L 66.20,83.85 L 66.14,86.03 L 66.19,88.17 L 66.36,90.25 L 66.63,92.28 L 67.01,94.24 L 67.48,96.14 L 68.04,97.96 L 68.69,99.71 L 69.41,101.39 L 70.20,102.99 L 71.07,104.51 L 71.99,105.95 L 72.97,107.30" fill="none" stroke="#00A1E4" stroke-width="2.0" stroke-linecap="round" opacity="0.3"/>
+      <path d="M 100.00,18.00 L 95.63,19.93 L 91.46,22.06 L 87.50,24.35 L 83.76,26.80 L 80.24,29.40 L 76.94,32.12 L 73.86,34.95 L 71.01,37.88 L 68.38,40.89 L 65.97,43.97 L 63.78,47.11 L 61.82,50.29 L 60.06,53.50 L 58.53,56.73 L 57.20,59.96 L 56.07,63.19 L 55.14,66.40 L 54.41,69.59 L 53.86,72.74 L 53.50,75.84 L 53.30,78.89 L 53.28,81.88 L 53.42,84.80 L 53.70,87.64 L 54.14,90.41 L 54.71,93.08 L 55.41,95.66 L 56.23,98.14 L 57.16,100.52 L 58.20,102.79 L 59.33,104.96 L 60.56,107.01 L 61.86,108.95 L 63.24,110.77 L 64.68,112.48 L 66.18,114.07 L 67.73,115.54 L 69.32,116.90 L 70.94,118.13 L 72.60,119.26 L 74.27,120.26 L 75.96,121.16 L 77.66,121.94 L 79.35,122.62 L 81.05,123.18 L 82.73,123.65 L 84.40,124.01 L 86.05,124.28" fill="none" stroke="#7EC352" stroke-width="2.0" stroke-linecap="round" opacity="0.3"/>
+      <path d="M 42.02,42.02 L 40.29,46.48 L 38.85,50.93 L 37.67,55.35 L 36.76,59.73 L 36.10,64.05 L 35.69,68.31 L 35.52,72.49 L 35.57,76.57 L 35.84,80.56 L 36.32,84.45 L 36.99,88.21 L 37.85,91.85 L 38.88,95.36 L 40.08,98.73 L 41.42,101.95 L 42.91,105.03 L 44.52,107.96 L 46.26,110.73 L 48.10,113.35 L 50.03,115.80 L 52.06,118.09 L 54.15,120.22 L 56.31,122.19 L 58.53,124.00 L 60.79,125.65 L 63.08,127.13 L 65.40,128.46 L 67.73,129.64 L 70.08,130.66 L 72.42,131.53 L 74.75,132.26 L 77.07,132.85 L 79.36,133.29 L 81.62,133.61 L 83.85,133.80 L 86.03,133.86 L 88.17,133.81 L 90.25,133.64 L 92.28,133.37 L 94.24,132.99 L 96.14,132.52 L 97.96,131.96 L 99.71,131.31 L 101.39,130.59 L 102.99,129.80 L 104.51,128.93 L 105.95,128.01 L 107.30,127.03" fill="none" stroke="#FFCB05" stroke-width="2.0" stroke-linecap="round" opacity="0.3"/>
+      <circle cx="182.00" cy="100.00" r="6.60" fill="#E00076" opacity="0.68"/>
+      <circle cx="165.46" cy="74.29" r="6.16" fill="#E00076" opacity="0.73"/>
+      <circle cx="144.20" cy="58.94" r="5.70" fill="#E00076" opacity="0.77"/>
+      <circle cx="122.41" cy="53.37" r="5.22" fill="#E00076" opacity="0.82"/>
+      <circle cx="103.27" cy="55.74" r="4.70" fill="#E00076" opacity="0.86"/>
+      <circle cx="88.73" cy="63.65" r="4.13" fill="#E00076" opacity="0.91"/>
+      <circle cx="79.60" cy="74.51" r="3.49" fill="#E00076" opacity="0.95"/>
+      <circle cx="75.72" cy="86.05" r="2.60" fill="#E00076" opacity="1.00"/>
+      <circle cx="157.98" cy="42.02" r="6.60" fill="#00A1E4" opacity="0.68"/>
+      <circle cx="128.11" cy="35.53" r="6.16" fill="#00A1E4" opacity="0.73"/>
+      <circle cx="102.22" cy="39.72" r="5.70" fill="#00A1E4" opacity="0.77"/>
+      <circle cx="82.87" cy="51.18" r="5.22" fill="#00A1E4" opacity="0.82"/>
+      <circle cx="71.02" cy="66.40" r="4.70" fill="#00A1E4" opacity="0.86"/>
+      <circle cx="66.32" cy="82.26" r="4.13" fill="#00A1E4" opacity="0.91"/>
+      <circle cx="67.55" cy="96.40" r="3.49" fill="#00A1E4" opacity="0.95"/>
+      <circle cx="72.97" cy="107.30" r="2.60" fill="#00A1E4" opacity="1.00"/>
+      <circle cx="100.00" cy="18.00" r="6.60" fill="#7EC352" opacity="0.68"/>
+      <circle cx="74.29" cy="34.54" r="6.16" fill="#7EC352" opacity="0.73"/>
+      <circle cx="58.94" cy="55.80" r="5.70" fill="#7EC352" opacity="0.77"/>
+      <circle cx="53.37" cy="77.59" r="5.22" fill="#7EC352" opacity="0.82"/>
+      <circle cx="55.74" cy="96.73" r="4.70" fill="#7EC352" opacity="0.86"/>
+      <circle cx="63.65" cy="111.27" r="4.13" fill="#7EC352" opacity="0.91"/>
+      <circle cx="74.51" cy="120.40" r="3.49" fill="#7EC352" opacity="0.95"/>
+      <circle cx="86.05" cy="124.28" r="2.60" fill="#7EC352" opacity="1.00"/>
+      <circle cx="42.02" cy="42.02" r="6.60" fill="#FFCB05" opacity="0.68"/>
+      <circle cx="35.53" cy="71.89" r="6.16" fill="#FFCB05" opacity="0.73"/>
+      <circle cx="39.72" cy="97.78" r="5.70" fill="#FFCB05" opacity="0.77"/>
+      <circle cx="51.18" cy="117.13" r="5.22" fill="#FFCB05" opacity="0.82"/>
+      <circle cx="66.40" cy="128.98" r="4.70" fill="#FFCB05" opacity="0.86"/>
+      <circle cx="82.26" cy="133.68" r="4.13" fill="#FFCB05" opacity="0.91"/>
+      <circle cx="96.40" cy="132.45" r="3.49" fill="#FFCB05" opacity="0.95"/>
+      <circle cx="107.30" cy="127.03" r="2.60" fill="#FFCB05" opacity="1.00"/>
+      <circle cx="100.0" cy="100.0" r="34" fill="url(#coreGlow)"/>
+      <circle cx="100.0" cy="100.0" r="19.5" fill="#FFFFFF"/>
+      <circle cx="100.0" cy="100.0" r="15.5" fill="#E00076"/>
+      <circle cx="100.0" cy="100.0" r="6.2" fill="#FFFFFF"/>
+  </g>
+  <line x1="252" y1="58" x2="252" y2="202" stroke="#E6E7E9" stroke-width="2"/>
+  <path d="M319.512 144.0H295.696V73.28H319.512Q328.664 73.28 334.592 75.20400000000001Q340.52 77.128 343.796 81.548Q347.072 85.968 348.32 91.94800000000001Q349.568 97.928 349.568 107.496Q349.568 117.064 348.424 123.356Q347.28 129.648 344.10799999999995 134.588Q340.936 139.528 334.904 141.764Q328.872 144.0 319.512 144.0ZM334.592 115.92Q334.8 112.592 334.8 106.71600000000001Q334.8 100.84 334.384 97.304Q333.968 93.768 332.408 90.856Q330.848 87.944 327.78 86.852Q324.712 85.76 319.512 85.76H310.048V131.52H319.512Q327.312 131.52 330.848 127.568Q333.864 124.344 334.592 115.92Z M384.364 144.0H360.548V73.28H384.364Q393.51599999999996 73.28 399.44399999999996 75.20400000000001Q405.37199999999996 77.128 408.64799999999997 81.548Q411.924 85.968 413.17199999999997 91.94800000000001Q414.41999999999996 97.928 414.41999999999996 107.496Q414.41999999999996 117.064 413.27599999999995 123.356Q412.13199999999995 129.648 408.9599999999999 134.588Q405.78799999999995 139.528 399.756 141.764Q393.724 144.0 384.364 144.0ZM399.44399999999996 115.92Q399.652 112.592 399.652 106.71600000000001Q399.652 100.84 399.236 97.304Q398.82 93.768 397.26 90.856Q395.7 87.944 392.63199999999995 86.852Q389.56399999999996 85.76 384.364 85.76H374.9V131.52H384.364Q392.164 131.52 395.7 127.568Q398.71599999999995 124.344 399.44399999999996 115.92Z M425.4 144.0V73.28H439.75199999999995V144.0Z" fill="#2B2F36"/>
+  <path d="M289.599 176.389H293.655Q296.26800000000003 176.389 297.52575 178.1245Q298.7835 179.86 298.7835 183.1945Q298.7835 186.529 297.52575 188.2645Q296.26800000000003 190.0 293.655 190.0H289.599ZM293.5185 188.206Q295.02 188.206 295.75125 187.20175Q296.4825 186.1975 296.4825 184.3255V182.0635Q296.4825 180.1915 295.75125 179.18725Q295.02 178.183 293.5185 178.183H291.7635V188.206Z M313.309 190.0 312.2755 186.373H307.9465L306.913 190.0H304.69L308.668 176.389H311.6515L315.6295 190.0ZM310.189 178.5925H310.033L308.356 184.5595H311.866Z M327.54200000000003 178.222V190.0H325.358V178.222H321.08750000000003V176.389H331.8125V178.222Z M345.90900000000005 190.0 344.87550000000005 186.373H340.54650000000004L339.51300000000003 190.0H337.29L341.26800000000003 176.389H344.2515L348.22950000000003 190.0ZM342.78900000000004 178.5925H342.63300000000004L340.956 184.5595H344.466Z" fill="#5F636A"/>
+  <path d="M373.65350000000007 190.234Q372.7565000000001 190.234 372.0545000000001 189.93175000000002Q371.3525000000001 189.6295 370.87475000000006 189.103Q370.39700000000005 188.5765 370.1435 187.88425Q369.89000000000004 187.192 369.89000000000004 186.3925Q369.89000000000004 185.281 370.43600000000004 184.267Q370.9820000000001 183.253 372.32750000000004 182.5315Q371.74250000000006 181.77100000000002 371.40125000000006 181.04950000000002Q371.06000000000006 180.328 371.06000000000006 179.50900000000001Q371.06000000000006 178.768 371.34275 178.15375Q371.62550000000005 177.5395 372.11300000000006 177.091Q372.60050000000007 176.6425 373.2732500000001 176.39875Q373.9460000000001 176.155 374.70650000000006 176.155Q375.38900000000007 176.155 375.95450000000005 176.35Q376.52000000000004 176.545 376.95875 176.857Q377.39750000000004 177.169 377.69000000000005 177.56875000000002Q377.9825000000001 177.9685 378.1385000000001 178.378L376.5590000000001 179.197Q376.32500000000005 178.5925 375.8375000000001 178.21224999999998Q375.3500000000001 177.832 374.6675000000001 177.832Q373.92650000000003 177.832 373.46825 178.29025000000001Q373.01000000000005 178.7485 373.01000000000005 179.47V179.6065Q373.01000000000005 179.899 373.0880000000001 180.172Q373.16600000000005 180.445 373.34150000000005 180.757Q373.51700000000005 181.069 373.79975 181.44925Q374.08250000000004 181.8295 374.4920000000001 182.356L375.97400000000005 184.189L377.20250000000004 185.8075H377.30000000000007Q377.4365000000001 185.086 377.47550000000007 184.15Q377.51450000000006 183.214 377.53400000000005 182.395H380.5955000000001V184.0525H379.1720000000001Q379.05500000000006 184.8715 378.90875000000005 185.56375Q378.76250000000005 186.256 378.43100000000004 187.075L380.86850000000004 190.0H378.50900000000007L376.87100000000004 188.05H376.7540000000001Q376.53950000000003 189.0445 375.73025000000007 189.63925Q374.92100000000005 190.234 373.65350000000007 190.234ZM374.19950000000006 188.4985Q374.86250000000007 188.4985 375.39875000000006 188.23525Q375.93500000000006 187.972 376.26650000000006 187.4065L373.244 183.682Q372.50300000000004 184.2085 372.23 184.84224999999998Q371.95700000000005 185.476 371.95700000000005 186.1975V186.373Q371.95700000000005 187.3675 372.5712500000001 187.933Q373.18550000000005 188.4985 374.19950000000006 188.4985Z" fill="#E00076"/>
+  <path d="M403.69900000000007 176.389H407.75500000000005Q410.36800000000005 176.389 411.62575000000004 178.1245Q412.8835000000001 179.86 412.8835000000001 183.1945Q412.8835000000001 186.529 411.62575000000004 188.2645Q410.36800000000005 190.0 407.75500000000005 190.0H403.69900000000007ZM407.6185000000001 188.206Q409.12000000000006 188.206 409.85125000000005 187.20175Q410.5825000000001 186.1975 410.5825000000001 184.3255V182.0635Q410.5825000000001 180.1915 409.85125000000005 179.18725Q409.12000000000006 178.183 407.6185000000001 178.183H405.8635000000001V188.206Z M420.0770000000001 190.0V176.389H428.5985000000001V178.222H422.2610000000001V182.1805H428.3645000000001V184.0135H422.2610000000001V188.167H428.5985000000001V190.0Z M440.9400000000001 190.234Q438.3465000000001 190.234 437.0887500000001 188.401Q435.8310000000001 186.568 435.8310000000001 183.1945Q435.8310000000001 179.821 437.0887500000001 177.988Q438.3465000000001 176.155 440.9400000000001 176.155Q441.9345000000001 176.155 442.6657500000001 176.41825Q443.3970000000001 176.6815 443.9235000000001 177.13975Q444.4500000000001 177.598 444.8107500000001 178.21225Q445.1715000000001 178.8265 445.4055000000001 179.5285L443.4360000000001 180.1915Q443.2800000000001 179.7235 443.0850000000001 179.31400000000002Q442.8900000000001 178.9045 442.5975000000001 178.61200000000002Q442.3050000000001 178.3195 441.90525000000014 178.144Q441.5055000000001 177.9685 440.9205000000001 177.9685Q439.4775000000001 177.9685 438.81450000000007 179.07025Q438.1515000000001 180.172 438.1515000000001 182.044V184.345Q438.1515000000001 186.217 438.81450000000007 187.31875000000002Q439.4775000000001 188.4205 440.9205000000001 188.4205Q441.5055000000001 188.4205 441.90525000000014 188.245Q442.3050000000001 188.0695 442.5975000000001 187.777Q442.8900000000001 187.4845 443.0850000000001 187.075Q443.2800000000001 186.6655 443.4360000000001 186.1975L445.4055000000001 186.8605Q445.1715000000001 187.5625 444.8107500000001 188.17675Q444.4500000000001 188.791 443.9235000000001 189.24925000000002Q443.3970000000001 189.7075 442.6657500000001 189.97075Q441.9345000000001 190.234 440.9400000000001 190.234Z M452.5600000000001 190.0V188.3425H455.7580000000001V178.0465H452.5600000000001V176.389H461.1400000000001V178.0465H457.9420000000001V188.3425H461.1400000000001V190.0Z M473.03300000000013 190.234Q471.25850000000014 190.234 470.04950000000014 189.61Q468.84050000000013 188.986 468.0605000000001 187.9525L469.4645000000001 186.607Q470.24450000000013 187.543 471.1220000000001 187.98175Q471.9995000000001 188.4205 473.1110000000001 188.4205Q474.39800000000014 188.4205 475.09025000000014 187.8355Q475.78250000000014 187.2505 475.78250000000014 186.1585Q475.78250000000014 185.281 475.27550000000014 184.80325Q474.76850000000013 184.3255 473.54000000000013 184.111L472.0580000000001 183.877Q471.08300000000014 183.721 470.42000000000013 183.36025Q469.7570000000001 182.9995 469.3475000000001 182.50225Q468.9380000000001 182.005 468.7527500000001 181.39075Q468.5675000000001 180.7765 468.5675000000001 180.094Q468.5675000000001 178.1635 469.81550000000016 177.15925Q471.06350000000015 176.155 473.2475000000001 176.155Q474.8660000000001 176.155 476.0067500000001 176.67175Q477.14750000000015 177.1885 477.84950000000015 178.1245L476.48450000000014 179.4895Q475.9190000000001 178.807 475.1487500000001 178.38774999999998Q474.37850000000014 177.9685 473.2475000000001 177.9685Q472.0385000000001 177.9685 471.40475000000015 178.48525Q470.77100000000013 179.002 470.77100000000013 179.9965Q470.77100000000013 180.835 471.26825000000014 181.31275Q471.76550000000015 181.7905 473.03300000000013 182.005L474.4760000000001 182.2585Q476.30900000000014 182.59 477.14750000000015 183.59425Q477.9860000000001 184.5985 477.9860000000001 186.0415Q477.9860000000001 186.9775 477.66425000000015 187.7575Q477.34250000000014 188.5375 476.7087500000001 189.08350000000002Q476.0750000000001 189.6295 475.1487500000001 189.93175000000002Q474.22250000000014 190.234 473.03300000000013 190.234Z M485.16000000000014 190.0V188.3425H488.3580000000001V178.0465H485.16000000000014V176.389H493.7400000000001V178.0465H490.54200000000014V188.3425H493.7400000000001V190.0Z M505.75000000000017 190.234Q504.46300000000014 190.234 503.5172500000001 189.75625000000002Q502.5715000000001 189.2785 501.95725000000016 188.38150000000002Q501.34300000000013 187.4845 501.05050000000017 186.178Q500.75800000000015 184.8715 500.75800000000015 183.1945Q500.75800000000015 181.537 501.05050000000017 180.22075Q501.34300000000013 178.9045 501.95725000000016 178.0075Q502.5715000000001 177.1105 503.5172500000001 176.63275Q504.46300000000014 176.155 505.75000000000017 176.155Q507.03700000000015 176.155 507.9827500000001 176.63275Q508.92850000000016 177.1105 509.5427500000002 178.0075Q510.15700000000015 178.9045 510.44950000000017 180.22075Q510.74200000000013 181.537 510.74200000000013 183.1945Q510.74200000000013 184.8715 510.44950000000017 186.178Q510.15700000000015 187.4845 509.5427500000002 188.38150000000002Q508.92850000000016 189.2785 507.9827500000001 189.75625000000002Q507.03700000000015 190.234 505.75000000000017 190.234ZM505.75000000000017 188.4205Q507.21250000000015 188.4205 507.8170000000001 187.31875000000002Q508.42150000000015 186.217 508.42150000000015 184.3255V182.044Q508.42150000000015 180.172 507.8170000000001 179.07025Q507.21250000000015 177.9685 505.75000000000017 177.9685Q504.28750000000014 177.9685 503.6830000000001 179.07025Q503.07850000000013 180.172 503.07850000000013 182.044V184.345Q503.07850000000013 186.217 503.6830000000001 187.31875000000002Q504.28750000000014 188.4205 505.75000000000017 188.4205Z M519.6905000000002 179.5285H519.5150000000002V190.0H517.6040000000002V176.389H520.4120000000001L524.4095000000002 186.8605H524.5850000000002V176.389H526.4960000000002V190.0H523.6880000000001Z M550.36 190.0V188.3425H553.5580000000001V178.0465H550.36V176.389H558.94V178.0465H555.7420000000001V188.3425H558.94V190.0Z M568.5905 179.5285H568.4150000000001V190.0H566.504V176.389H569.312L573.3095000000001 186.8605H573.485V176.389H575.3960000000001V190.0H572.588Z M588.342 178.222V190.0H586.158V178.222H581.8874999999999V176.389H592.6125V178.222Z M599.377 190.0V176.389H607.8984999999999V178.222H601.5609999999999V182.1805H607.6645V184.0135H601.5609999999999V188.167H607.8984999999999V190.0Z M616.1059999999999 190.0V176.389H618.2899999999998V188.167H624.4909999999999V190.0Z M632.4059999999998 190.0V176.389H634.5899999999998V188.167H640.7909999999998V190.0Z M648.1599999999997 190.0V188.3425H651.3579999999998V178.0465H648.1599999999997V176.389H656.7399999999998V178.0465H653.5419999999998V188.3425H656.7399999999998V190.0Z M671.2849999999997 188.128H671.1484999999998Q670.9729999999997 188.5375 670.7292499999998 188.91775Q670.4854999999998 189.298 670.1247499999997 189.59050000000002Q669.7639999999998 189.883 669.2569999999998 190.0585Q668.7499999999998 190.234 668.0869999999998 190.234Q665.9614999999998 190.234 664.8889999999998 188.4205Q663.8164999999998 186.607 663.8164999999998 183.292Q663.8164999999998 179.821 665.0449999999998 177.988Q666.2734999999998 176.155 668.8084999999998 176.155Q669.8029999999998 176.155 670.5537499999998 176.428Q671.3044999999997 176.701 671.8309999999997 177.15925Q672.3574999999997 177.6175 672.7084999999997 178.23175Q673.0594999999997 178.846 673.2739999999998 179.5285L671.3044999999997 180.1915Q671.1484999999998 179.743 670.9534999999998 179.34325Q670.7584999999998 178.9435 670.4757499999998 178.63150000000002Q670.1929999999998 178.3195 669.7932499999997 178.144Q669.3934999999998 177.9685 668.8279999999997 177.9685Q667.4044999999998 177.9685 666.7707499999997 179.07025Q666.1369999999997 180.172 666.1369999999997 182.044V184.2085Q666.1369999999997 185.1445 666.2734999999998 185.9245Q666.4099999999997 186.7045 666.7317499999997 187.26024999999998Q667.0534999999998 187.816 667.5702499999998 188.128Q668.0869999999998 188.44 668.8279999999997 188.44Q670.0174999999997 188.44 670.6512499999997 187.72825Q671.2849999999997 187.0165 671.2849999999997 185.905V184.6765H668.6524999999998V183.0385H673.2739999999998V190.0H671.2849999999997Z M680.8769999999997 190.0V176.389H689.3984999999997V178.222H683.0609999999997V182.1805H689.1644999999997V184.0135H683.0609999999997V188.167H689.3984999999997V190.0Z M698.9904999999997 179.5285H698.8149999999997V190.0H696.9039999999997V176.389H699.7119999999996L703.7094999999997 186.8605H703.8849999999996V176.389H705.7959999999997V190.0H702.9879999999996Z M718.0399999999996 190.234Q715.4464999999996 190.234 714.1887499999996 188.401Q712.9309999999996 186.568 712.9309999999996 183.1945Q712.9309999999996 179.821 714.1887499999996 177.988Q715.4464999999996 176.155 718.0399999999996 176.155Q719.0344999999996 176.155 719.7657499999996 176.41825Q720.4969999999996 176.6815 721.0234999999996 177.13975Q721.5499999999996 177.598 721.9107499999996 178.21225Q722.2714999999996 178.8265 722.5054999999996 179.5285L720.5359999999996 180.1915Q720.3799999999997 179.7235 720.1849999999997 179.31400000000002Q719.9899999999997 178.9045 719.6974999999996 178.61200000000002Q719.4049999999996 178.3195 719.0052499999997 178.144Q718.6054999999997 177.9685 718.0204999999996 177.9685Q716.5774999999996 177.9685 715.9144999999996 179.07025Q715.2514999999996 180.172 715.2514999999996 182.044V184.345Q715.2514999999996 186.217 715.9144999999996 187.31875000000002Q716.5774999999996 188.4205 718.0204999999996 188.4205Q718.6054999999997 188.4205 719.0052499999997 188.245Q719.4049999999996 188.0695 719.6974999999996 187.777Q719.9899999999997 187.4845 720.1849999999997 187.075Q720.3799999999997 186.6655 720.5359999999996 186.1975L722.5054999999996 186.8605Q722.2714999999996 187.5625 721.9107499999996 188.17675Q721.5499999999996 188.791 721.0234999999996 189.24925000000002Q720.4969999999996 189.7075 719.7657499999996 189.97075Q719.0344999999996 190.234 718.0399999999996 190.234Z M729.7769999999996 190.0V176.389H738.2984999999995V178.222H731.9609999999996V182.1805H738.0644999999996V184.0135H731.9609999999996V188.167H738.2984999999995V190.0Z" fill="#5F636A"/>
+</svg></span>
+  <span class="logo logo-dark" role="img" aria-label="DDI · Data &amp; Decision Intelligence"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 766 260" width="766" height="260">
+  <defs>
+    <radialGradient id="coreGlowD">
+      <stop offset="0%" stop-color="#E00076" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#E00076" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="766" height="260" fill="#1B1F25"/>
+  <g transform="translate(26,30)">
+      <path d="M 182.00,100.00 L 180.07,95.63 L 177.94,91.46 L 175.65,87.50 L 173.20,83.76 L 170.60,80.24 L 167.88,76.94 L 165.05,73.86 L 162.12,71.01 L 159.11,68.38 L 156.03,65.97 L 152.89,63.78 L 149.71,61.82 L 146.50,60.06 L 143.27,58.53 L 140.04,57.20 L 136.81,56.07 L 133.60,55.14 L 130.41,54.41 L 127.26,53.86 L 124.16,53.50 L 121.11,53.30 L 118.12,53.28 L 115.20,53.42 L 112.36,53.70 L 109.59,54.14 L 106.92,54.71 L 104.34,55.41 L 101.86,56.23 L 99.48,57.16 L 97.21,58.20 L 95.04,59.33 L 92.99,60.56 L 91.05,61.86 L 89.23,63.24 L 87.52,64.68 L 85.93,66.18 L 84.46,67.73 L 83.10,69.32 L 81.87,70.94 L 80.74,72.60 L 79.74,74.27 L 78.84,75.96 L 78.06,77.66 L 77.38,79.35 L 76.82,81.05 L 76.35,82.73 L 75.99,84.40 L 75.72,86.05" fill="none" stroke="#E00076" stroke-width="2.0" stroke-linecap="round" opacity="0.3"/>
+      <path d="M 157.98,42.02 L 153.52,40.29 L 149.07,38.85 L 144.65,37.67 L 140.27,36.76 L 135.95,36.10 L 131.69,35.69 L 127.51,35.52 L 123.43,35.57 L 119.44,35.84 L 115.55,36.32 L 111.79,36.99 L 108.15,37.85 L 104.64,38.88 L 101.27,40.08 L 98.05,41.42 L 94.97,42.91 L 92.04,44.52 L 89.27,46.26 L 86.65,48.10 L 84.20,50.03 L 81.91,52.06 L 79.78,54.15 L 77.81,56.31 L 76.00,58.53 L 74.35,60.79 L 72.87,63.08 L 71.54,65.40 L 70.36,67.73 L 69.34,70.08 L 68.47,72.42 L 67.74,74.75 L 67.15,77.07 L 66.71,79.36 L 66.39,81.62 L 66.20,83.85 L 66.14,86.03 L 66.19,88.17 L 66.36,90.25 L 66.63,92.28 L 67.01,94.24 L 67.48,96.14 L 68.04,97.96 L 68.69,99.71 L 69.41,101.39 L 70.20,102.99 L 71.07,104.51 L 71.99,105.95 L 72.97,107.30" fill="none" stroke="#00A1E4" stroke-width="2.0" stroke-linecap="round" opacity="0.3"/>
+      <path d="M 100.00,18.00 L 95.63,19.93 L 91.46,22.06 L 87.50,24.35 L 83.76,26.80 L 80.24,29.40 L 76.94,32.12 L 73.86,34.95 L 71.01,37.88 L 68.38,40.89 L 65.97,43.97 L 63.78,47.11 L 61.82,50.29 L 60.06,53.50 L 58.53,56.73 L 57.20,59.96 L 56.07,63.19 L 55.14,66.40 L 54.41,69.59 L 53.86,72.74 L 53.50,75.84 L 53.30,78.89 L 53.28,81.88 L 53.42,84.80 L 53.70,87.64 L 54.14,90.41 L 54.71,93.08 L 55.41,95.66 L 56.23,98.14 L 57.16,100.52 L 58.20,102.79 L 59.33,104.96 L 60.56,107.01 L 61.86,108.95 L 63.24,110.77 L 64.68,112.48 L 66.18,114.07 L 67.73,115.54 L 69.32,116.90 L 70.94,118.13 L 72.60,119.26 L 74.27,120.26 L 75.96,121.16 L 77.66,121.94 L 79.35,122.62 L 81.05,123.18 L 82.73,123.65 L 84.40,124.01 L 86.05,124.28" fill="none" stroke="#7EC352" stroke-width="2.0" stroke-linecap="round" opacity="0.3"/>
+      <path d="M 42.02,42.02 L 40.29,46.48 L 38.85,50.93 L 37.67,55.35 L 36.76,59.73 L 36.10,64.05 L 35.69,68.31 L 35.52,72.49 L 35.57,76.57 L 35.84,80.56 L 36.32,84.45 L 36.99,88.21 L 37.85,91.85 L 38.88,95.36 L 40.08,98.73 L 41.42,101.95 L 42.91,105.03 L 44.52,107.96 L 46.26,110.73 L 48.10,113.35 L 50.03,115.80 L 52.06,118.09 L 54.15,120.22 L 56.31,122.19 L 58.53,124.00 L 60.79,125.65 L 63.08,127.13 L 65.40,128.46 L 67.73,129.64 L 70.08,130.66 L 72.42,131.53 L 74.75,132.26 L 77.07,132.85 L 79.36,133.29 L 81.62,133.61 L 83.85,133.80 L 86.03,133.86 L 88.17,133.81 L 90.25,133.64 L 92.28,133.37 L 94.24,132.99 L 96.14,132.52 L 97.96,131.96 L 99.71,131.31 L 101.39,130.59 L 102.99,129.80 L 104.51,128.93 L 105.95,128.01 L 107.30,127.03" fill="none" stroke="#FFCB05" stroke-width="2.0" stroke-linecap="round" opacity="0.3"/>
+      <circle cx="182.00" cy="100.00" r="6.60" fill="#E00076" opacity="0.68"/>
+      <circle cx="165.46" cy="74.29" r="6.16" fill="#E00076" opacity="0.73"/>
+      <circle cx="144.20" cy="58.94" r="5.70" fill="#E00076" opacity="0.77"/>
+      <circle cx="122.41" cy="53.37" r="5.22" fill="#E00076" opacity="0.82"/>
+      <circle cx="103.27" cy="55.74" r="4.70" fill="#E00076" opacity="0.86"/>
+      <circle cx="88.73" cy="63.65" r="4.13" fill="#E00076" opacity="0.91"/>
+      <circle cx="79.60" cy="74.51" r="3.49" fill="#E00076" opacity="0.95"/>
+      <circle cx="75.72" cy="86.05" r="2.60" fill="#E00076" opacity="1.00"/>
+      <circle cx="157.98" cy="42.02" r="6.60" fill="#00A1E4" opacity="0.68"/>
+      <circle cx="128.11" cy="35.53" r="6.16" fill="#00A1E4" opacity="0.73"/>
+      <circle cx="102.22" cy="39.72" r="5.70" fill="#00A1E4" opacity="0.77"/>
+      <circle cx="82.87" cy="51.18" r="5.22" fill="#00A1E4" opacity="0.82"/>
+      <circle cx="71.02" cy="66.40" r="4.70" fill="#00A1E4" opacity="0.86"/>
+      <circle cx="66.32" cy="82.26" r="4.13" fill="#00A1E4" opacity="0.91"/>
+      <circle cx="67.55" cy="96.40" r="3.49" fill="#00A1E4" opacity="0.95"/>
+      <circle cx="72.97" cy="107.30" r="2.60" fill="#00A1E4" opacity="1.00"/>
+      <circle cx="100.00" cy="18.00" r="6.60" fill="#7EC352" opacity="0.68"/>
+      <circle cx="74.29" cy="34.54" r="6.16" fill="#7EC352" opacity="0.73"/>
+      <circle cx="58.94" cy="55.80" r="5.70" fill="#7EC352" opacity="0.77"/>
+      <circle cx="53.37" cy="77.59" r="5.22" fill="#7EC352" opacity="0.82"/>
+      <circle cx="55.74" cy="96.73" r="4.70" fill="#7EC352" opacity="0.86"/>
+      <circle cx="63.65" cy="111.27" r="4.13" fill="#7EC352" opacity="0.91"/>
+      <circle cx="74.51" cy="120.40" r="3.49" fill="#7EC352" opacity="0.95"/>
+      <circle cx="86.05" cy="124.28" r="2.60" fill="#7EC352" opacity="1.00"/>
+      <circle cx="42.02" cy="42.02" r="6.60" fill="#FFCB05" opacity="0.68"/>
+      <circle cx="35.53" cy="71.89" r="6.16" fill="#FFCB05" opacity="0.73"/>
+      <circle cx="39.72" cy="97.78" r="5.70" fill="#FFCB05" opacity="0.77"/>
+      <circle cx="51.18" cy="117.13" r="5.22" fill="#FFCB05" opacity="0.82"/>
+      <circle cx="66.40" cy="128.98" r="4.70" fill="#FFCB05" opacity="0.86"/>
+      <circle cx="82.26" cy="133.68" r="4.13" fill="#FFCB05" opacity="0.91"/>
+      <circle cx="96.40" cy="132.45" r="3.49" fill="#FFCB05" opacity="0.95"/>
+      <circle cx="107.30" cy="127.03" r="2.60" fill="#FFCB05" opacity="1.00"/>
+      <circle cx="100.0" cy="100.0" r="34" fill="url(#coreGlowD)"/>
+      <circle cx="100.0" cy="100.0" r="19.5" fill="#1B1F25"/>
+      <circle cx="100.0" cy="100.0" r="15.5" fill="#E00076"/>
+      <circle cx="100.0" cy="100.0" r="6.2" fill="#1B1F25"/>
+  </g>
+  <line x1="252" y1="58" x2="252" y2="202" stroke="#333942" stroke-width="2"/>
+  <path d="M319.512 144.0H295.696V73.28H319.512Q328.664 73.28 334.592 75.20400000000001Q340.52 77.128 343.796 81.548Q347.072 85.968 348.32 91.94800000000001Q349.568 97.928 349.568 107.496Q349.568 117.064 348.424 123.356Q347.28 129.648 344.10799999999995 134.588Q340.936 139.528 334.904 141.764Q328.872 144.0 319.512 144.0ZM334.592 115.92Q334.8 112.592 334.8 106.71600000000001Q334.8 100.84 334.384 97.304Q333.968 93.768 332.408 90.856Q330.848 87.944 327.78 86.852Q324.712 85.76 319.512 85.76H310.048V131.52H319.512Q327.312 131.52 330.848 127.568Q333.864 124.344 334.592 115.92Z M384.364 144.0H360.548V73.28H384.364Q393.51599999999996 73.28 399.44399999999996 75.20400000000001Q405.37199999999996 77.128 408.64799999999997 81.548Q411.924 85.968 413.17199999999997 91.94800000000001Q414.41999999999996 97.928 414.41999999999996 107.496Q414.41999999999996 117.064 413.27599999999995 123.356Q412.13199999999995 129.648 408.9599999999999 134.588Q405.78799999999995 139.528 399.756 141.764Q393.724 144.0 384.364 144.0ZM399.44399999999996 115.92Q399.652 112.592 399.652 106.71600000000001Q399.652 100.84 399.236 97.304Q398.82 93.768 397.26 90.856Q395.7 87.944 392.63199999999995 86.852Q389.56399999999996 85.76 384.364 85.76H374.9V131.52H384.364Q392.164 131.52 395.7 127.568Q398.71599999999995 124.344 399.44399999999996 115.92Z M425.4 144.0V73.28H439.75199999999995V144.0Z" fill="#FFFFFF"/>
+  <path d="M289.599 176.389H293.655Q296.26800000000003 176.389 297.52575 178.1245Q298.7835 179.86 298.7835 183.1945Q298.7835 186.529 297.52575 188.2645Q296.26800000000003 190.0 293.655 190.0H289.599ZM293.5185 188.206Q295.02 188.206 295.75125 187.20175Q296.4825 186.1975 296.4825 184.3255V182.0635Q296.4825 180.1915 295.75125 179.18725Q295.02 178.183 293.5185 178.183H291.7635V188.206Z M313.309 190.0 312.2755 186.373H307.9465L306.913 190.0H304.69L308.668 176.389H311.6515L315.6295 190.0ZM310.189 178.5925H310.033L308.356 184.5595H311.866Z M327.54200000000003 178.222V190.0H325.358V178.222H321.08750000000003V176.389H331.8125V178.222Z M345.90900000000005 190.0 344.87550000000005 186.373H340.54650000000004L339.51300000000003 190.0H337.29L341.26800000000003 176.389H344.2515L348.22950000000003 190.0ZM342.78900000000004 178.5925H342.63300000000004L340.956 184.5595H344.466Z" fill="#9498A0"/>
+  <path d="M373.65350000000007 190.234Q372.7565000000001 190.234 372.0545000000001 189.93175000000002Q371.3525000000001 189.6295 370.87475000000006 189.103Q370.39700000000005 188.5765 370.1435 187.88425Q369.89000000000004 187.192 369.89000000000004 186.3925Q369.89000000000004 185.281 370.43600000000004 184.267Q370.9820000000001 183.253 372.32750000000004 182.5315Q371.74250000000006 181.77100000000002 371.40125000000006 181.04950000000002Q371.06000000000006 180.328 371.06000000000006 179.50900000000001Q371.06000000000006 178.768 371.34275 178.15375Q371.62550000000005 177.5395 372.11300000000006 177.091Q372.60050000000007 176.6425 373.2732500000001 176.39875Q373.9460000000001 176.155 374.70650000000006 176.155Q375.38900000000007 176.155 375.95450000000005 176.35Q376.52000000000004 176.545 376.95875 176.857Q377.39750000000004 177.169 377.69000000000005 177.56875000000002Q377.9825000000001 177.9685 378.1385000000001 178.378L376.5590000000001 179.197Q376.32500000000005 178.5925 375.8375000000001 178.21224999999998Q375.3500000000001 177.832 374.6675000000001 177.832Q373.92650000000003 177.832 373.46825 178.29025000000001Q373.01000000000005 178.7485 373.01000000000005 179.47V179.6065Q373.01000000000005 179.899 373.0880000000001 180.172Q373.16600000000005 180.445 373.34150000000005 180.757Q373.51700000000005 181.069 373.79975 181.44925Q374.08250000000004 181.8295 374.4920000000001 182.356L375.97400000000005 184.189L377.20250000000004 185.8075H377.30000000000007Q377.4365000000001 185.086 377.47550000000007 184.15Q377.51450000000006 183.214 377.53400000000005 182.395H380.5955000000001V184.0525H379.1720000000001Q379.05500000000006 184.8715 378.90875000000005 185.56375Q378.76250000000005 186.256 378.43100000000004 187.075L380.86850000000004 190.0H378.50900000000007L376.87100000000004 188.05H376.7540000000001Q376.53950000000003 189.0445 375.73025000000007 189.63925Q374.92100000000005 190.234 373.65350000000007 190.234ZM374.19950000000006 188.4985Q374.86250000000007 188.4985 375.39875000000006 188.23525Q375.93500000000006 187.972 376.26650000000006 187.4065L373.244 183.682Q372.50300000000004 184.2085 372.23 184.84224999999998Q371.95700000000005 185.476 371.95700000000005 186.1975V186.373Q371.95700000000005 187.3675 372.5712500000001 187.933Q373.18550000000005 188.4985 374.19950000000006 188.4985Z" fill="#E00076"/>
+  <path d="M403.69900000000007 176.389H407.75500000000005Q410.36800000000005 176.389 411.62575000000004 178.1245Q412.8835000000001 179.86 412.8835000000001 183.1945Q412.8835000000001 186.529 411.62575000000004 188.2645Q410.36800000000005 190.0 407.75500000000005 190.0H403.69900000000007ZM407.6185000000001 188.206Q409.12000000000006 188.206 409.85125000000005 187.20175Q410.5825000000001 186.1975 410.5825000000001 184.3255V182.0635Q410.5825000000001 180.1915 409.85125000000005 179.18725Q409.12000000000006 178.183 407.6185000000001 178.183H405.8635000000001V188.206Z M420.0770000000001 190.0V176.389H428.5985000000001V178.222H422.2610000000001V182.1805H428.3645000000001V184.0135H422.2610000000001V188.167H428.5985000000001V190.0Z M440.9400000000001 190.234Q438.3465000000001 190.234 437.0887500000001 188.401Q435.8310000000001 186.568 435.8310000000001 183.1945Q435.8310000000001 179.821 437.0887500000001 177.988Q438.3465000000001 176.155 440.9400000000001 176.155Q441.9345000000001 176.155 442.6657500000001 176.41825Q443.3970000000001 176.6815 443.9235000000001 177.13975Q444.4500000000001 177.598 444.8107500000001 178.21225Q445.1715000000001 178.8265 445.4055000000001 179.5285L443.4360000000001 180.1915Q443.2800000000001 179.7235 443.0850000000001 179.31400000000002Q442.8900000000001 178.9045 442.5975000000001 178.61200000000002Q442.3050000000001 178.3195 441.90525000000014 178.144Q441.5055000000001 177.9685 440.9205000000001 177.9685Q439.4775000000001 177.9685 438.81450000000007 179.07025Q438.1515000000001 180.172 438.1515000000001 182.044V184.345Q438.1515000000001 186.217 438.81450000000007 187.31875000000002Q439.4775000000001 188.4205 440.9205000000001 188.4205Q441.5055000000001 188.4205 441.90525000000014 188.245Q442.3050000000001 188.0695 442.5975000000001 187.777Q442.8900000000001 187.4845 443.0850000000001 187.075Q443.2800000000001 186.6655 443.4360000000001 186.1975L445.4055000000001 186.8605Q445.1715000000001 187.5625 444.8107500000001 188.17675Q444.4500000000001 188.791 443.9235000000001 189.24925000000002Q443.3970000000001 189.7075 442.6657500000001 189.97075Q441.9345000000001 190.234 440.9400000000001 190.234Z M452.5600000000001 190.0V188.3425H455.7580000000001V178.0465H452.5600000000001V176.389H461.1400000000001V178.0465H457.9420000000001V188.3425H461.1400000000001V190.0Z M473.03300000000013 190.234Q471.25850000000014 190.234 470.04950000000014 189.61Q468.84050000000013 188.986 468.0605000000001 187.9525L469.4645000000001 186.607Q470.24450000000013 187.543 471.1220000000001 187.98175Q471.9995000000001 188.4205 473.1110000000001 188.4205Q474.39800000000014 188.4205 475.09025000000014 187.8355Q475.78250000000014 187.2505 475.78250000000014 186.1585Q475.78250000000014 185.281 475.27550000000014 184.80325Q474.76850000000013 184.3255 473.54000000000013 184.111L472.0580000000001 183.877Q471.08300000000014 183.721 470.42000000000013 183.36025Q469.7570000000001 182.9995 469.3475000000001 182.50225Q468.9380000000001 182.005 468.7527500000001 181.39075Q468.5675000000001 180.7765 468.5675000000001 180.094Q468.5675000000001 178.1635 469.81550000000016 177.15925Q471.06350000000015 176.155 473.2475000000001 176.155Q474.8660000000001 176.155 476.0067500000001 176.67175Q477.14750000000015 177.1885 477.84950000000015 178.1245L476.48450000000014 179.4895Q475.9190000000001 178.807 475.1487500000001 178.38774999999998Q474.37850000000014 177.9685 473.2475000000001 177.9685Q472.0385000000001 177.9685 471.40475000000015 178.48525Q470.77100000000013 179.002 470.77100000000013 179.9965Q470.77100000000013 180.835 471.26825000000014 181.31275Q471.76550000000015 181.7905 473.03300000000013 182.005L474.4760000000001 182.2585Q476.30900000000014 182.59 477.14750000000015 183.59425Q477.9860000000001 184.5985 477.9860000000001 186.0415Q477.9860000000001 186.9775 477.66425000000015 187.7575Q477.34250000000014 188.5375 476.7087500000001 189.08350000000002Q476.0750000000001 189.6295 475.1487500000001 189.93175000000002Q474.22250000000014 190.234 473.03300000000013 190.234Z M485.16000000000014 190.0V188.3425H488.3580000000001V178.0465H485.16000000000014V176.389H493.7400000000001V178.0465H490.54200000000014V188.3425H493.7400000000001V190.0Z M505.75000000000017 190.234Q504.46300000000014 190.234 503.5172500000001 189.75625000000002Q502.5715000000001 189.2785 501.95725000000016 188.38150000000002Q501.34300000000013 187.4845 501.05050000000017 186.178Q500.75800000000015 184.8715 500.75800000000015 183.1945Q500.75800000000015 181.537 501.05050000000017 180.22075Q501.34300000000013 178.9045 501.95725000000016 178.0075Q502.5715000000001 177.1105 503.5172500000001 176.63275Q504.46300000000014 176.155 505.75000000000017 176.155Q507.03700000000015 176.155 507.9827500000001 176.63275Q508.92850000000016 177.1105 509.5427500000002 178.0075Q510.15700000000015 178.9045 510.44950000000017 180.22075Q510.74200000000013 181.537 510.74200000000013 183.1945Q510.74200000000013 184.8715 510.44950000000017 186.178Q510.15700000000015 187.4845 509.5427500000002 188.38150000000002Q508.92850000000016 189.2785 507.9827500000001 189.75625000000002Q507.03700000000015 190.234 505.75000000000017 190.234ZM505.75000000000017 188.4205Q507.21250000000015 188.4205 507.8170000000001 187.31875000000002Q508.42150000000015 186.217 508.42150000000015 184.3255V182.044Q508.42150000000015 180.172 507.8170000000001 179.07025Q507.21250000000015 177.9685 505.75000000000017 177.9685Q504.28750000000014 177.9685 503.6830000000001 179.07025Q503.07850000000013 180.172 503.07850000000013 182.044V184.345Q503.07850000000013 186.217 503.6830000000001 187.31875000000002Q504.28750000000014 188.4205 505.75000000000017 188.4205Z M519.6905000000002 179.5285H519.5150000000002V190.0H517.6040000000002V176.389H520.4120000000001L524.4095000000002 186.8605H524.5850000000002V176.389H526.4960000000002V190.0H523.6880000000001Z M550.36 190.0V188.3425H553.5580000000001V178.0465H550.36V176.389H558.94V178.0465H555.7420000000001V188.3425H558.94V190.0Z M568.5905 179.5285H568.4150000000001V190.0H566.504V176.389H569.312L573.3095000000001 186.8605H573.485V176.389H575.3960000000001V190.0H572.588Z M588.342 178.222V190.0H586.158V178.222H581.8874999999999V176.389H592.6125V178.222Z M599.377 190.0V176.389H607.8984999999999V178.222H601.5609999999999V182.1805H607.6645V184.0135H601.5609999999999V188.167H607.8984999999999V190.0Z M616.1059999999999 190.0V176.389H618.2899999999998V188.167H624.4909999999999V190.0Z M632.4059999999998 190.0V176.389H634.5899999999998V188.167H640.7909999999998V190.0Z M648.1599999999997 190.0V188.3425H651.3579999999998V178.0465H648.1599999999997V176.389H656.7399999999998V178.0465H653.5419999999998V188.3425H656.7399999999998V190.0Z M671.2849999999997 188.128H671.1484999999998Q670.9729999999997 188.5375 670.7292499999998 188.91775Q670.4854999999998 189.298 670.1247499999997 189.59050000000002Q669.7639999999998 189.883 669.2569999999998 190.0585Q668.7499999999998 190.234 668.0869999999998 190.234Q665.9614999999998 190.234 664.8889999999998 188.4205Q663.8164999999998 186.607 663.8164999999998 183.292Q663.8164999999998 179.821 665.0449999999998 177.988Q666.2734999999998 176.155 668.8084999999998 176.155Q669.8029999999998 176.155 670.5537499999998 176.428Q671.3044999999997 176.701 671.8309999999997 177.15925Q672.3574999999997 177.6175 672.7084999999997 178.23175Q673.0594999999997 178.846 673.2739999999998 179.5285L671.3044999999997 180.1915Q671.1484999999998 179.743 670.9534999999998 179.34325Q670.7584999999998 178.9435 670.4757499999998 178.63150000000002Q670.1929999999998 178.3195 669.7932499999997 178.144Q669.3934999999998 177.9685 668.8279999999997 177.9685Q667.4044999999998 177.9685 666.7707499999997 179.07025Q666.1369999999997 180.172 666.1369999999997 182.044V184.2085Q666.1369999999997 185.1445 666.2734999999998 185.9245Q666.4099999999997 186.7045 666.7317499999997 187.26024999999998Q667.0534999999998 187.816 667.5702499999998 188.128Q668.0869999999998 188.44 668.8279999999997 188.44Q670.0174999999997 188.44 670.6512499999997 187.72825Q671.2849999999997 187.0165 671.2849999999997 185.905V184.6765H668.6524999999998V183.0385H673.2739999999998V190.0H671.2849999999997Z M680.8769999999997 190.0V176.389H689.3984999999997V178.222H683.0609999999997V182.1805H689.1644999999997V184.0135H683.0609999999997V188.167H689.3984999999997V190.0Z M698.9904999999997 179.5285H698.8149999999997V190.0H696.9039999999997V176.389H699.7119999999996L703.7094999999997 186.8605H703.8849999999996V176.389H705.7959999999997V190.0H702.9879999999996Z M718.0399999999996 190.234Q715.4464999999996 190.234 714.1887499999996 188.401Q712.9309999999996 186.568 712.9309999999996 183.1945Q712.9309999999996 179.821 714.1887499999996 177.988Q715.4464999999996 176.155 718.0399999999996 176.155Q719.0344999999996 176.155 719.7657499999996 176.41825Q720.4969999999996 176.6815 721.0234999999996 177.13975Q721.5499999999996 177.598 721.9107499999996 178.21225Q722.2714999999996 178.8265 722.5054999999996 179.5285L720.5359999999996 180.1915Q720.3799999999997 179.7235 720.1849999999997 179.31400000000002Q719.9899999999997 178.9045 719.6974999999996 178.61200000000002Q719.4049999999996 178.3195 719.0052499999997 178.144Q718.6054999999997 177.9685 718.0204999999996 177.9685Q716.5774999999996 177.9685 715.9144999999996 179.07025Q715.2514999999996 180.172 715.2514999999996 182.044V184.345Q715.2514999999996 186.217 715.9144999999996 187.31875000000002Q716.5774999999996 188.4205 718.0204999999996 188.4205Q718.6054999999997 188.4205 719.0052499999997 188.245Q719.4049999999996 188.0695 719.6974999999996 187.777Q719.9899999999997 187.4845 720.1849999999997 187.075Q720.3799999999997 186.6655 720.5359999999996 186.1975L722.5054999999996 186.8605Q722.2714999999996 187.5625 721.9107499999996 188.17675Q721.5499999999996 188.791 721.0234999999996 189.24925000000002Q720.4969999999996 189.7075 719.7657499999996 189.97075Q719.0344999999996 190.234 718.0399999999996 190.234Z M729.7769999999996 190.0V176.389H738.2984999999995V178.222H731.9609999999996V182.1805H738.0644999999996V184.0135H731.9609999999996V188.167H738.2984999999995V190.0Z" fill="#9498A0"/>
+</svg></span>
+  <span class="unit">Diretoria Global de Dados &amp; Analítica</span>
+</div></div>
 
 <div class="wrap">
   <header class="top">
     <div>
-      <div class="eyebrow">Diretoria Global de Dados &amp; Analítica</div>
+      <div class="eyebrow">Pauta da diretoria</div>
       <h1>Pauta de Atividades</h1>
-      <p class="lede">O que está em execução, quanto tempo consome e em que ordem deve andar. Arraste os cartões entre as colunas ou use o seletor para definir a prioridade.</p>
+      <p class="lede">O que está em execução, quanto tempo consome e em que ordem deve andar. Arraste os cartões entre as colunas, ou use o seletor, para definir a prioridade.</p>
     </div>
     <div class="actions">
       <button class="btn" id="btn-copy" type="button">Copiar resumo</button>
-      <button class="btn primary" id="btn-new" type="button">+ Nova atividade</button>
+      <button class="btn pri" id="btn-new" type="button">+ Nova atividade</button>
     </div>
   </header>
 
-  <section class="kpis" id="kpis" aria-label="Indicadores da semana"></section>
+  <section class="kpis" id="kpis" aria-label="Indicadores do período"></section>
 
   <div class="tabs-row">
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" id="tab-prior" data-view="prior" type="button">Priorização</button>
-      <button class="tab" role="tab" id="tab-agenda" data-view="agenda" type="button">Agenda da semana</button>
+      <button class="tab" role="tab" id="tab-agenda" data-view="agenda" type="button">Agenda</button>
       <button class="tab" role="tab" id="tab-frentes" data-view="frentes" type="button">Frentes de trabalho</button>
     </div>
     <div class="hint" id="sync-hint">Conectando…</div>
@@ -237,13 +378,19 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
       <div class="field s3"><label for="f-tipo">Tipo</label>
         <select id="f-tipo"><option value="reuniao">Reunião</option><option value="entrega">Entrega / documento</option><option value="rotina">Acompanhamento</option></select></div>
       <div class="field s3"><label for="f-frente">Frente</label><input id="f-frente" list="frentes-list" placeholder="Ex.: Córtex / Sumun Analytics"><datalist id="frentes-list"></datalist></div>
-      <div class="field s2"><label for="f-data">Dia</label><input id="f-data" type="date"></div>
-      <div class="field s2"><label for="f-inicio">Início</label><input id="f-inicio" type="time"></div>
-      <div class="field s2"><label for="f-fim">Fim</label><input id="f-fim" type="time"></div>
-      <div class="field s3"><label for="f-horas">Dedicação estimada (h)</label><input id="f-horas" type="number" min="0" step="0.5" inputmode="decimal"><span class="help" id="horas-help">Com início e fim preenchidos, o tempo é calculado pelo horário.</span></div>
+      <div class="blocks">
+        <div class="blk-h">Blocos de tempo</div>
+        <div class="blk-head help"><span>Dia</span><span>Início</span><span>Fim</span><span>Horas</span><span></span></div>
+        <div id="blk-list" style="display:flex;flex-direction:column;gap:6px"></div>
+        <div class="foot">
+          <button type="button" class="btn sm" id="blk-add">+ Adicionar bloco</button>
+          <span class="blk-total" id="blk-total"></span>
+        </div>
+        <span class="help">Com início e fim, as horas saem do horário. Sem horário, informe só as horas (bloco flexível no dia). Atividades que se estendem por vários dias recebem um bloco por dia.</span>
+      </div>
       <div class="field s3"><label for="f-status">Status</label>
         <select id="f-status"><option value="agendar">A agendar</option><option value="planejada">Planejada</option><option value="andamento">Em andamento</option><option value="bloqueada">Bloqueada</option><option value="concluida">Concluída</option></select></div>
-      <div class="field"><label for="f-pessoas">Pessoas envolvidas</label><input id="f-pessoas" placeholder="Ex.: Luís Felipe, Luís Haruo"></div>
+      <div class="field s3"><label for="f-pessoas">Pessoas envolvidas</label><input id="f-pessoas" placeholder="Ex.: Luís Felipe, Luís Haruo"></div>
       <div class="dir-grid">
         <div class="cap">Decisão do diretor</div>
         <div class="field"><label for="f-prioridade">Prioridade</label>
@@ -255,7 +402,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
       <button type="button" class="btn danger" id="btn-del" hidden>Excluir</button>
       <div class="r">
         <button type="button" class="btn" id="btn-cancel">Cancelar</button>
-        <button type="submit" class="btn primary" id="btn-save">Salvar</button>
+        <button type="submit" class="btn pri" id="btn-save">Salvar</button>
       </div>
     </div>
   </form>
@@ -266,6 +413,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
 <script>
 (function () {
   "use strict";
+  const CAP = 8; // horas de trabalho por dia, para o indicador de capacidade
   const TIPOS = { reuniao: "Reunião", entrega: "Entrega", rotina: "Acompanhamento" };
   const STATUS = { agendar: "A agendar", planejada: "Planejada", andamento: "Em andamento", bloqueada: "Bloqueada", concluida: "Concluída" };
   const PRIOS = [
@@ -275,6 +423,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
     { k: "P3", label: "P3 · Média", sub: "Próximas semanas" },
     { k: "P4", label: "P4 · Pode esperar", sub: "Backlog ou delegar" }
   ];
+  const ORBS = ["#E00076", "#00A1E4", "#7EC352", "#FFCB05", "#9B97A2"];
   const DIAS = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
 
   const $ = (s) => document.querySelector(s);
@@ -295,89 +444,122 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
   const iso = (d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
   const parseD = (s) => new Date(s + "T12:00:00");
   const todayIso = iso(new Date());
-  const mondayOf = (d) => { const x = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 12); const wd = (x.getDay() + 6) % 7; x.setDate(x.getDate() - wd); return x; };
+  const mondayOf = (d) => { const x = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 12); x.setDate(x.getDate() - (x.getDay() + 6) % 7); return x; };
   const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
   const ddmm = (d) => pad(d.getDate()) + "/" + pad(d.getMonth() + 1);
-  const fmtDate = (s) => { if (!s) return ""; const d = parseD(s); return DIAS[d.getDay()] + ", " + ddmm(d); };
+  const fmtDate = (s) => { if (!s) return ""; const d = parseD(s); return DIAS[d.getDay()] + " " + ddmm(d); };
   const toMin = (t) => { if (!t) return null; const [h, m] = t.split(":").map(Number); return h * 60 + m; };
-  function dur(it) {
-    const a = toMin(it.inicio), b = toMin(it.fim);
-    if (a != null && b != null && b > a) return (b - a) / 60;
-    return Number(it.horas) || 0;
-  }
   const fmtH = (h) => h ? (Number.isInteger(h) ? h : h.toFixed(1).replace(".", ",")) + "h" : "—";
+
+  // Uma atividade tem um ou mais blocos de tempo: {data, inicio, fim, horas}
+  function sess(it) {
+    if (Array.isArray(it.sessoes)) return it.sessoes;
+    return it.data || it.inicio || Number(it.horas) ? [{ data: it.data || "", inicio: it.inicio || "", fim: it.fim || "", horas: Number(it.horas) || 0 }] : [];
+  }
+  const timed = (s) => { const a = toMin(s.inicio), b = toMin(s.fim); return a != null && b != null && b > a; };
+  const sDur = (s) => timed(s) ? (toMin(s.fim) - toMin(s.inicio)) / 60 : Number(s.horas) || 0;
+  const dur = (it) => sess(it).reduce((t, s) => t + sDur(s), 0);
+  const dated = (it) => sess(it).filter((s) => s.data).sort((a, b) => (a.data + (a.inicio || "")).localeCompare(b.data + (b.inicio || "")));
   function when(it) {
-    if (!it.data) return "Sem data";
-    let s = fmtDate(it.data);
-    if (it.inicio) s += " · " + it.inicio + (it.fim ? "–" + it.fim : "");
-    return s;
+    const d = dated(it);
+    if (!d.length) return "Sem data";
+    if (d.length === 1) { const s = d[0]; return fmtDate(s.data) + (s.inicio ? " · " + s.inicio + (s.fim ? "–" + s.fim : "") : " · flexível"); }
+    const first = d[0].data, last = d[d.length - 1].data;
+    return (first === last ? fmtDate(first) : fmtDate(first) + " → " + fmtDate(last)) + " · " + d.length + " blocos";
+  }
+  // período padrão: de hoje até sexta na semana atual; semanas futuras/passadas mostram seg a sex
+  function range() {
+    const mon = mondayOf(weekAnchor), fri = addDays(mon, 4);
+    let start = mon;
+    if (iso(mon) <= todayIso && todayIso <= iso(addDays(mon, 6))) start = parseD(todayIso) > fri ? mon : parseD(todayIso);
+    return { start, end: fri, mon };
   }
 
-  // ---------- conflitos de agenda ----------
+  // ---------- conflitos de horário ----------
   function conflicts() {
     const map = new Map();
-    const timed = items.filter((i) => i.data && toMin(i.inicio) != null && toMin(i.fim) != null && i.status !== "concluida");
-    for (let x = 0; x < timed.length; x++) for (let y = x + 1; y < timed.length; y++) {
-      const a = timed[x], b = timed[y];
-      if (a.data !== b.data) continue;
-      if (toMin(a.inicio) < toMin(b.fim) && toMin(b.inicio) < toMin(a.fim)) {
-        if (!map.has(a.id)) map.set(a.id, []);
-        if (!map.has(b.id)) map.set(b.id, []);
-        map.get(a.id).push(b.titulo); map.get(b.id).push(a.titulo);
+    const list = [];
+    items.forEach((it) => { if (it.status !== "concluida") sess(it).forEach((s) => { if (s.data && timed(s)) list.push({ it, s }); }); });
+    for (let x = 0; x < list.length; x++) for (let y = x + 1; y < list.length; y++) {
+      const a = list[x], b = list[y];
+      if (a.it.id === b.it.id || a.s.data !== b.s.data) continue;
+      if (toMin(a.s.inicio) < toMin(b.s.fim) && toMin(b.s.inicio) < toMin(a.s.fim)) {
+        [[a, b], [b, a]].forEach(([p, q]) => {
+          if (!map.has(p.it.id)) map.set(p.it.id, new Set());
+          map.get(p.it.id).add(q.it.titulo);
+          p.s.__conf = true;
+        });
       }
     }
     return map;
   }
 
   const byOrder = (a, b) => (Number(a.ordem) || 0) - (Number(b.ordem) || 0) || String(a.titulo).localeCompare(String(b.titulo));
+  function orbFor(frente) {
+    const fs = [...new Set(items.map((i) => i.frente || "Sem frente"))].sort();
+    return ORBS[Math.max(0, fs.indexOf(frente || "Sem frente")) % ORBS.length];
+  }
 
   // ---------- render ----------
   function render() {
     document.querySelectorAll(".tab").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.view === view)));
     $("#btn-new").hidden = !canWrite;
     $("#readonly").hidden = canWrite || !db;
+    items.forEach((it) => sess(it).forEach((s) => { delete s.__conf; }));
     renderKpis();
     const v = $("#view");
     if (!db && loaded) { v.innerHTML = `<div class="state"><strong>Os dados não abriram nesta visualização</strong>Abra a página pelo link do claude.ai com sua conta conectada para ver e editar as atividades.</div>`; return; }
     if (!loaded) { v.innerHTML = `<div class="state"><strong>Carregando atividades…</strong>As atividades lançadas aparecem aqui assim que a conexão responder.</div>`; return; }
-    if (!items.length) { v.innerHTML = `<div class="state"><strong>Nenhuma atividade lançada ainda</strong>Use “+ Nova atividade” para registrar a primeira: dia, horário ou dedicação estimada, frente e pessoas envolvidas.</div>`; return; }
+    if (!items.length) { v.innerHTML = `<div class="state"><strong>Nenhuma atividade lançada ainda</strong>Use “+ Nova atividade” para registrar a primeira: blocos de tempo, frente e pessoas envolvidas.</div>`; return; }
     if (view === "prior") renderBoard(v);
     else if (view === "agenda") renderAgenda(v);
     else renderFrentes(v);
     refreshFrentesList();
   }
 
-  function renderKpis() {
-    const mon = mondayOf(weekAnchor), sun = addDays(mon, 6);
-    const inWeek = items.filter((i) => i.data && i.data >= iso(mon) && i.data <= iso(sun));
-    const h = inWeek.reduce((s, i) => s + dur(i), 0);
-    const hMeet = inWeek.filter((i) => i.tipo === "reuniao").reduce((s, i) => s + dur(i), 0);
-    const open = items.filter((i) => i.status !== "concluida");
-    const triage = open.filter((i) => !i.prioridade).length;
-    const undated = open.filter((i) => !i.data).length;
-    const conf = conflicts();
-    const confWeek = inWeek.filter((i) => conf.has(i.id)).length;
-    const k = (v, l, cls) => `<div class="kpi ${cls || ""}"><span class="v">${v}</span><span class="l">${l}</span></div>`;
-    $("#kpis").innerHTML =
-      k(fmtH(h), "comprometidas na semana de " + ddmm(mon)) +
-      k(fmtH(hMeet), "em reuniões nessa semana") +
-      k(open.length, "atividades em aberto") +
-      k(triage, "aguardando priorização", triage ? "todo" : "") +
-      k(undated, "sem data definida") +
-      k(confWeek, confWeek === 1 ? "atividade em conflito de horário" : "atividades em conflito de horário", confWeek ? "alert" : "");
+  function periodLoad(start, end) {
+    const a = iso(start), b = iso(end);
+    let total = 0, meet = 0;
+    const perDay = {};
+    items.forEach((it) => sess(it).forEach((s) => {
+      if (!s.data || s.data < a || s.data > b) return;
+      const h = sDur(s); total += h; if (it.tipo === "reuniao") meet += h;
+      perDay[s.data] = (perDay[s.data] || 0) + h;
+    }));
+    return { total, meet, perDay };
   }
 
-  function cardHtml(it, list, idx, conf) {
+  function renderKpis() {
+    const { start, end } = range();
+    const L = periodLoad(start, end);
+    const days = Math.round((end - start) / 864e5) + 1;
+    const capH = days * CAP;
+    const overDays = Object.values(L.perDay).filter((h) => h > CAP).length;
+    const open = items.filter((i) => i.status !== "concluida");
+    const triage = open.filter((i) => !i.prioridade).length;
+    const conf = conflicts();
+    const periodo = ddmm(start) + " a " + ddmm(end);
+    const k = (l, v, s, cls) => `<div class="kpi ${cls || ""}"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`;
+    $("#kpis").innerHTML =
+      k("Horas comprometidas", fmtH(L.total), periodo + " · capacidade " + capH + "h", L.total > capH ? "alert" : "") +
+      k("Em reuniões", fmtH(L.meet), L.total ? Math.round((L.meet / L.total) * 100) + "% do tempo no período" : "no período") +
+      k("Dias acima de " + CAP + "h", overDays, overDays ? "sobrecarga na agenda" : "dentro da capacidade", overDays ? "alert" : "") +
+      k("Aguardando priorização", triage, "de " + open.length + " em aberto", triage ? "todo" : "") +
+      k("Conflitos de horário", conf.size, conf.size ? "atividades sobrepostas" : "nenhuma sobreposição", conf.size ? "alert" : "");
+  }
+
+  function cardHtml(it, list, idx, conf, withCtl) {
     const c = conf.get(it.id);
     const opts = PRIOS.map((p) => `<option value="${p.k}"${(it.prioridade || "") === p.k ? " selected" : ""}>${esc(p.k ? p.label : "Triagem")}</option>`).join("");
-    return `<article class="card${it.status === "concluida" ? " done" : ""}" data-id="${esc(it.id)}"${canWrite ? ' draggable="true"' : ""}>
-      <div class="card-top"><span class="chip tipo-${esc(it.tipo)}">${esc(TIPOS[it.tipo] || "Atividade")}</span><span class="chip st-${esc(it.status)}">${esc(STATUS[it.status] || "")}</span></div>
+    const cl = c ? [...c] : [];
+    return `<article class="card${it.status === "concluida" ? " done" : ""}" data-id="${esc(it.id)}"${canWrite && withCtl ? ' draggable="true"' : ""}>
+      <div class="card-top"><span class="chip tipo-${esc(it.tipo)}">${esc(TIPOS[it.tipo] || "Atividade")}</span><span class="pill st-${esc(it.status)}">${esc(STATUS[it.status] || "")}</span></div>
       <h4><button type="button" data-open="${esc(it.id)}">${esc(it.titulo)}</button></h4>
       ${it.frente ? `<div class="frente">${esc(it.frente)}</div>` : ""}
-      <div class="meta"><span>${esc(when(it))}</span><span>${fmtH(dur(it))}${it.inicio && it.fim ? "" : (Number(it.horas) ? " est." : "")}</span></div>
-      ${c ? `<div><span class="chip conflict" title="Sobrepõe: ${esc(c.join(", "))}">Conflito com ${esc(c.length === 1 ? c[0] : c.length + " atividades")}</span></div>` : ""}
+      <div class="meta"><span>${esc(when(it))}</span><span>${fmtH(dur(it))}</span></div>
+      ${c ? `<div><span class="pill conflict" title="Sobrepõe: ${esc(cl.join(", "))}">Conflito com ${esc(cl.length === 1 ? cl[0] : cl.length + " atividades")}</span></div>` : ""}
       ${it.notaDiretor ? `<p class="nota"><b>Orientação</b>${esc(it.notaDiretor)}</p>` : ""}
-      ${canWrite ? `<div class="card-ctl">
+      ${canWrite && withCtl ? `<div class="card-ctl">
         <select data-prio="${esc(it.id)}" aria-label="Prioridade de ${esc(it.titulo)}">${opts}</select>
         <button type="button" class="icon-btn" data-move="up" data-id="${esc(it.id)}" ${idx === 0 ? "disabled" : ""} aria-label="Subir">↑</button>
         <button type="button" class="icon-btn" data-move="down" data-id="${esc(it.id)}" ${idx === list.length - 1 ? "disabled" : ""} aria-label="Descer">↓</button>
@@ -392,44 +574,50 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
       const h = list.filter((i) => i.status !== "concluida").reduce((s, i) => s + dur(i), 0);
       return `<section class="col" data-col="${p.k}">
         <div class="col-head"><div><h3><span class="dot ${p.k || "none"}"></span>${esc(p.label)}</h3><div class="sub">${esc(p.sub)}</div></div><span class="sum">${list.length} · ${fmtH(h)}</span></div>
-        ${list.length ? list.map((it, i) => cardHtml(it, list, i, conf)).join("") : `<div class="col-empty">${p.k ? "Arraste atividades para cá" : "Tudo priorizado"}</div>`}
+        ${list.length ? list.map((it, i) => cardHtml(it, list, i, conf, true)).join("") : `<div class="col-empty">${p.k ? "Arraste atividades para cá" : "Tudo priorizado"}</div>`}
       </section>`;
     }).join("")}</div>`;
   }
 
-  function slotHtml(it, conf) {
-    const c = conf.get(it.id);
-    return `<button type="button" class="slot${c ? " conf" : ""}" data-open="${esc(it.id)}">
-      <span class="t">${it.inicio ? `<b>${esc(it.inicio)}</b>${esc(it.fim || "")}` : "dia todo"}</span>
+  function slotHtml(it, s, conf) {
+    const flex = !timed(s);
+    return `<button type="button" class="slot${s.__conf ? " conf" : ""}${flex ? " flex" : ""}" data-open="${esc(it.id)}">
+      <span class="t">${flex ? `<b>flex.</b>${fmtH(sDur(s))}` : `<b>${esc(s.inicio)}</b>${esc(s.fim)}`}</span>
       <span class="what"><strong>${esc(it.titulo)}</strong>
-        <span class="tags">${it.prioridade ? `<span class="chip pr ${esc(it.prioridade)}">${esc(it.prioridade)}</span>` : `<span class="chip">Triagem</span>`}<span class="chip">${fmtH(dur(it))}</span>${c ? `<span class="chip conflict">Conflito</span>` : ""}</span>
+        <span class="tags">${it.prioridade ? `<span class="chip pr ${esc(it.prioridade)}">${esc(it.prioridade)}</span>` : `<span class="chip">Triagem</span>`}${flex ? "" : `<span class="chip">${fmtH(sDur(s))}</span>`}${s.__conf ? `<span class="pill conflict">Conflito</span>` : ""}</span>
       </span></button>`;
   }
 
   function renderAgenda(v) {
     const conf = conflicts();
-    const mon = mondayOf(weekAnchor);
+    const { start, end, mon } = range();
     const days = [];
-    for (let d = 0; d < 7; d++) days.push(addDays(mon, d));
-    const show = days.filter((d, i) => i < 5 || items.some((it) => it.data === iso(d)));
-    const sortT = (a, b) => (toMin(a.inicio) ?? -1) - (toMin(b.inicio) ?? -1);
-    const undated = items.filter((i) => !i.data && i.status !== "concluida").sort(byOrder);
+    for (let d = new Date(start); iso(d) <= iso(end); d = addDays(d, 1)) days.push(new Date(d));
+    [5, 6].forEach((n) => { const d = addDays(mon, n); if (items.some((it) => sess(it).some((s) => s.data === iso(d)))) days.push(d); });
+    const undated = items.filter((i) => !dated(i).length && i.status !== "concluida").sort(byOrder);
+    const isCurrent = iso(start) === todayIso;
     v.innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
       <div class="week-nav">
         <button class="icon-btn" type="button" id="wk-prev" aria-label="Semana anterior">‹</button>
-        <span class="label">${ddmm(mon)} – ${ddmm(addDays(mon, 6))}</span>
+        <span class="label">${isCurrent ? "Hoje a sexta · " : ""}${ddmm(start)} – ${ddmm(end)}</span>
         <button class="icon-btn" type="button" id="wk-next" aria-label="Próxima semana">›</button>
-        <button class="btn" type="button" id="wk-today">Hoje</button>
+        ${isCurrent ? "" : `<button class="btn sm" type="button" id="wk-today">Voltar para hoje</button>`}
       </div>
-      <div class="week">${show.map((d) => {
+      <div class="week">${days.map((d) => {
         const ds = iso(d);
-        const list = items.filter((i) => i.data === ds).sort(sortT);
-        const h = list.reduce((s, i) => s + dur(i), 0);
-        return `<section class="day${ds === todayIso ? " today" : ""}"><div class="day-head"><b>${DIAS[d.getDay()]} ${ddmm(d)}</b><span>${fmtH(h)}</span></div>
-          <div class="slots">${list.length ? list.map((it) => slotHtml(it, conf)).join("") : `<div class="day-empty">Livre</div>`}</div></section>`;
+        const slots = [];
+        items.forEach((it) => sess(it).forEach((s) => { if (s.data === ds) slots.push({ it, s }); }));
+        slots.sort((a, b) => (toMin(a.s.inicio) ?? 9999) - (toMin(b.s.inicio) ?? 9999));
+        const hT = slots.filter((x) => timed(x.s)).reduce((t, x) => t + sDur(x.s), 0);
+        const hF = slots.filter((x) => !timed(x.s)).reduce((t, x) => t + sDur(x.s), 0);
+        const tot = hT + hF, over = tot > CAP, scale = Math.max(CAP, tot);
+        return `<section class="day${ds === todayIso ? " today" : ""}">
+          <div class="day-head"><div class="row"><b>${DIAS[d.getDay()]} ${ddmm(d)}${ds === todayIso ? " · hoje" : ""}</b><span class="cap${over ? " over" : ""}">${fmtH(tot) === "—" ? "0h" : fmtH(tot)} / ${CAP}h</span></div>
+            <div class="capbar${over ? " over" : ""}" title="${fmtH(hT)} com horário, ${fmtH(hF)} flexível"><i style="width:${(hT / scale) * 100}%"></i><i class="flex" style="width:${(hF / scale) * 100}%"></i></div></div>
+          <div class="slots">${slots.length ? slots.map((x) => slotHtml(x.it, x.s, conf)).join("") : `<div class="day-empty">Livre</div>`}</div></section>`;
       }).join("")}</div>
-      <section class="undated"><h3>Sem data definida <span class="hint">(${undated.length})</span></h3>
-        ${undated.length ? `<div class="undated-list">${undated.map((it, i) => cardHtml(it, undated, i, conf).replace(/<div class="card-ctl">[\s\S]*?<\/div>/, "")).join("")}</div>` : `<div class="hint">Todas as atividades em aberto têm data.</div>`}
+      <section style="display:flex;flex-direction:column;gap:10px"><h3 class="section-title">Sem data definida <span class="hint">(${undated.length})</span></h3>
+        ${undated.length ? `<div class="undated-list">${undated.map((it) => cardHtml(it, undated, 0, conf, false)).join("")}</div>` : `<div class="hint">Todas as atividades em aberto têm data.</div>`}
       </section></div>`;
   }
 
@@ -437,15 +625,16 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
     const groups = new Map();
     items.forEach((i) => { const f = i.frente || "Sem frente"; if (!groups.has(f)) groups.set(f, []); groups.get(f).push(i); });
     const arr = [...groups.entries()].map(([f, list]) => ({ f, list, h: list.reduce((s, i) => s + dur(i), 0) })).sort((a, b) => b.h - a.h || b.list.length - a.list.length);
+    const total = arr.reduce((t, g) => t + g.h, 0);
     const rank = { P1: 1, P2: 2, P3: 3, P4: 4, "": 5 };
     v.innerHTML = `<div style="display:flex;flex-direction:column;gap:12px">
-      <div class="legend"><span><span class="dot P1"></span>P1</span><span><span class="dot P2"></span>P2</span><span><span class="dot P3"></span>P3</span><span><span class="dot P4"></span>P4</span><span><span class="dot none"></span>Triagem</span><span>Barra = composição por prioridade (nº de atividades)</span></div>
+      <div class="legend"><span><span class="dot P1"></span>P1</span><span><span class="dot P2"></span>P2</span><span><span class="dot P3"></span>P3</span><span><span class="dot P4"></span>P4</span><span><span class="dot none"></span>Triagem</span><span>Barra: composição por prioridade (nº de atividades)</span></div>
       <div class="fronts">${arr.map(({ f, list, h }) => {
         const counts = { P1: 0, P2: 0, P3: 0, P4: 0, "": 0 };
         list.forEach((i) => counts[i.prioridade || ""]++);
         const bar = Object.entries(counts).filter(([, n]) => n).map(([k, n]) => `<i class="${k || "none"}" style="width:${(n / list.length) * 100}%"></i>`).join("");
         const sorted = list.slice().sort((a, b) => rank[a.prioridade || ""] - rank[b.prioridade || ""] || byOrder(a, b));
-        return `<section class="front"><div class="front-head"><h3>${esc(f)}</h3><span class="n">${list.length} ativ. · ${fmtH(h)}</span></div>
+        return `<section class="front"><div class="front-head"><h3><span class="orb" style="background:${orbFor(f)}"></span>${esc(f)}</h3><span class="n">${list.length} ativ. · ${fmtH(h)}${total ? " · " + Math.round((h / total) * 100) + "%" : ""}</span></div>
           <div class="bar">${bar}</div>
           <ul>${sorted.map((i) => `<li><button type="button" data-open="${esc(i.id)}">${i.prioridade ? `<span class="chip pr ${esc(i.prioridade)}">${esc(i.prioridade)}</span>` : `<span class="chip">—</span>`}<span class="tt">${esc(i.titulo)}</span><span class="h">${fmtH(dur(i))}</span></button></li>`).join("")}</ul>
         </section>`;
@@ -463,7 +652,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
     clearTimeout(toast._t); toast._t = setTimeout(() => { t.hidden = true; }, 2600);
   }
   function writeFailed(e) {
-    if (e && e.code === "invalid_argument" && !editingId) { canWrite = false; render(); toast("Sem permissão para editar. Peça acesso de Colaborador."); return; }
+    if (e && e.code === "invalid_argument") { canWrite = false; render(); toast("Sem permissão para editar. Peça acesso de Colaborador."); return; }
     if (e && e.code === "quota_exceeded") { toast("Limite de armazenamento atingido. Exclua atividades antigas."); return; }
     toast("Não foi possível salvar. Tente de novo em instantes.");
   }
@@ -480,7 +669,6 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
     const list = items.filter((i) => (i.prioridade || "") === (it.prioridade || "")).sort(byOrder);
     const idx = list.findIndex((i) => i.id === id), j = dir === "up" ? idx - 1 : idx + 1;
     if (j < 0 || j >= list.length) return;
-    // renumera a coluna para manter a ordem estável
     const next = list.slice(); [next[idx], next[j]] = [next[j], next[idx]];
     try {
       for (let n = 0; n < next.length; n++) {
@@ -491,6 +679,50 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
 
   // ---------- editor ----------
   const F = (k) => $("#f-" + k);
+  let blkSeq = 0;
+  function blkRow(s) {
+    const n = blkSeq++;
+    const row = document.createElement("div");
+    row.className = "blk";
+    row.innerHTML = `<input class="bd" type="date" id="b-data-${n}" aria-label="Dia" value="${esc(s.data || "")}">
+      <input type="time" id="b-ini-${n}" aria-label="Início" value="${esc(s.inicio || "")}">
+      <input type="time" id="b-fim-${n}" aria-label="Fim" value="${esc(s.fim || "")}">
+      <input type="number" id="b-h-${n}" aria-label="Horas" min="0" step="0.5" inputmode="decimal" value="${s.horas ? esc(s.horas) : ""}">
+      <button type="button" class="icon-btn" data-rm aria-label="Remover bloco">✕</button>`;
+    return row;
+  }
+  function readBlocks() {
+    return [...document.querySelectorAll("#blk-list .blk")].map((r) => {
+      const [d, a, b, h] = r.querySelectorAll("input");
+      const s = { data: d.value, inicio: a.value, fim: b.value, horas: Number(h.value) || 0 };
+      if (timed(s)) s.horas = sDur(s);
+      return s;
+    }).filter((s) => s.data || s.inicio || s.fim || s.horas);
+  }
+  function syncBlocks() {
+    document.querySelectorAll("#blk-list .blk").forEach((r) => {
+      const [, a, b, h] = r.querySelectorAll("input");
+      const s = { inicio: a.value, fim: b.value };
+      const auto = timed(s);
+      if (auto) h.value = sDur(s);
+      h.readOnly = auto;
+    });
+    const list = readBlocks();
+    const t = list.reduce((x, s) => x + sDur(s), 0);
+    $("#blk-total").textContent = list.length ? list.length + (list.length === 1 ? " bloco · " : " blocos · ") + fmtH(t) : "Nenhum bloco";
+  }
+  $("#blk-list").addEventListener("input", syncBlocks);
+  $("#blk-list").addEventListener("click", (ev) => {
+    const b = ev.target.closest("[data-rm]"); if (!b || !canWrite) return;
+    b.closest(".blk").remove(); syncBlocks();
+  });
+  $("#blk-add").addEventListener("click", () => {
+    const rows = readBlocks();
+    const last = rows[rows.length - 1];
+    const next = last && last.data ? iso(addDays(parseD(last.data), 1)) : todayIso;
+    $("#blk-list").appendChild(blkRow({ data: next })); syncBlocks();
+  });
+
   function openEditor(id) {
     editingId = id || null;
     const it = id ? items.find((i) => i.id === id) : null;
@@ -499,45 +731,36 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
     F("descricao").value = it ? it.descricao || "" : "";
     F("tipo").value = it ? it.tipo || "reuniao" : "reuniao";
     F("frente").value = it ? it.frente || "" : "";
-    F("data").value = it ? it.data || "" : todayIso;
-    F("inicio").value = it ? it.inicio || "" : "";
-    F("fim").value = it ? it.fim || "" : "";
-    F("horas").value = it && it.horas ? it.horas : "";
     F("status").value = it ? it.status || "planejada" : "planejada";
     F("pessoas").value = it ? it.pessoas || "" : "";
     F("prioridade").value = it ? it.prioridade || "" : "";
     F("nota").value = it ? it.notaDiretor || "" : "";
-    $("#form").querySelectorAll("input,select,textarea").forEach((el) => { el.disabled = !canWrite; });
+    const bl = $("#blk-list"); bl.innerHTML = "";
+    const ss = it ? sess(it) : [{ data: todayIso }];
+    (ss.length ? ss : [{}]).forEach((s) => bl.appendChild(blkRow(s)));
+    $("#form").querySelectorAll("input,select,textarea,#blk-add,[data-rm]").forEach((el) => { el.disabled = !canWrite; });
     $("#btn-save").hidden = !canWrite;
     const del = $("#btn-del"); del.hidden = !it || !canWrite; del.classList.remove("armed"); del.textContent = "Excluir";
-    syncHoras();
+    syncBlocks();
     $("#dlg").showModal();
     if (canWrite) setTimeout(() => F("titulo").focus(), 30);
   }
-  function syncHoras() {
-    const a = toMin(F("inicio").value), b = toMin(F("fim").value);
-    const auto = a != null && b != null && b > a;
-    if (auto) F("horas").value = (b - a) / 60;
-    F("horas").readOnly = auto;
-    $("#horas-help").textContent = auto ? "Calculado pelo horário de início e fim." : "Para entregas sem horário fixo, informe o esforço estimado.";
-  }
-  ["inicio", "fim"].forEach((k) => F(k).addEventListener("change", syncHoras));
 
   $("#form").addEventListener("submit", async (ev) => {
     ev.preventDefault();
     if (!canWrite) return;
     const titulo = F("titulo").value.trim();
     if (!titulo) { F("titulo").focus(); toast("Dê um nome para a atividade."); return; }
-    const a = toMin(F("inicio").value), b = toMin(F("fim").value);
-    if (a != null && b != null && b <= a) { F("fim").focus(); toast("O fim precisa ser depois do início."); return; }
+    const raw = [...document.querySelectorAll("#blk-list .blk")].map((r) => [...r.querySelectorAll("input")].map((i) => i.value));
+    if (raw.some(([, a, b]) => a && b && toMin(b) <= toMin(a))) { toast("Em cada bloco, o fim precisa ser depois do início."); return; }
+    const sessoes = readBlocks();
     const prev = editingId ? items.find((i) => i.id === editingId) : null;
     const prioridade = F("prioridade").value;
     let ordem = prev ? Number(prev.ordem) || 0 : 0;
     if (!prev || (prev.prioridade || "") !== prioridade) ordem = items.filter((i) => (i.prioridade || "") === prioridade).reduce((m, i) => Math.max(m, Number(i.ordem) || 0), 0) + 1;
     const body = {
       titulo, descricao: F("descricao").value.trim(), tipo: F("tipo").value, frente: F("frente").value.trim(),
-      data: F("data").value, inicio: F("inicio").value, fim: F("fim").value, horas: Number(F("horas").value) || 0,
-      status: F("status").value, pessoas: F("pessoas").value.trim(), prioridade, ordem,
+      sessoes, status: F("status").value, pessoas: F("pessoas").value.trim(), prioridade, ordem,
       notaDiretor: F("nota").value.trim(), criadoEm: prev && prev.criadoEm ? prev.criadoEm : stamp(), atualizadoEm: stamp()
     };
     const btn = $("#btn-save"); btn.disabled = true;
@@ -559,7 +782,9 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
   // ---------- resumo para colar em e-mail / Teams ----------
   function summary() {
     const open = items.filter((i) => i.status !== "concluida");
-    const lines = ["Pauta de atividades · Diretoria Global de Dados & Analítica", "Atualizado em " + ddmm(new Date()) + "/" + new Date().getFullYear(), ""];
+    const { start, end } = range();
+    const L = periodLoad(start, end);
+    const lines = ["Pauta de atividades · Diretoria Global de Dados & Analítica (DDI)", "Período " + ddmm(start) + " a " + ddmm(end) + ": " + fmtH(L.total) + " comprometidas, " + fmtH(L.meet) + " em reuniões", ""];
     PRIOS.slice(1).concat(PRIOS[0]).forEach((p) => {
       const list = open.filter((i) => (i.prioridade || "") === p.k).sort(byOrder);
       if (!list.length) return;
@@ -573,9 +798,8 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
     const text = summary();
     const box = $("#copy-box");
     const fallback = () => { box.hidden = false; box.innerHTML = `<textarea class="copy-fallback" id="copy-text" readonly></textarea>`; const ta = $("#copy-text"); ta.value = text; ta.focus(); ta.select(); toast("Selecione o texto e copie"); };
-    try {
-      navigator.clipboard.writeText(text).then(() => { box.hidden = true; toast("Resumo copiado"); }, fallback);
-    } catch (e) { fallback(); }
+    try { navigator.clipboard.writeText(text).then(() => { box.hidden = true; toast("Resumo copiado"); }, fallback); }
+    catch (e) { fallback(); }
   });
 
   // ---------- eventos ----------
@@ -593,7 +817,6 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
   $("#view").addEventListener("change", (ev) => {
     const s = ev.target.closest("[data-prio]"); if (s) setPriority(s.dataset.prio, s.value);
   });
-  // arrastar e soltar entre colunas
   let dragId = null;
   $("#view").addEventListener("dragstart", (ev) => {
     const c = ev.target.closest(".card[draggable='true']"); if (!c) return;
@@ -620,13 +843,11 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--f-mo
     if (!claude || !claude.use) { loaded = true; $("#sync-hint").textContent = "Sem conexão com os dados"; render(); return; }
     const [d, user] = await Promise.all([claude.use("db"), claude.use("user")]);
     db = d;
-    if (user) {
-      try { const w = await user.can("data.write"); if (w === false) canWrite = false; } catch (e) {}
-    }
+    if (user) { try { const w = await user.can("data.write"); if (w === false) canWrite = false; } catch (e) {} }
     if (!db) { loaded = true; canWrite = false; $("#sync-hint").textContent = "Sem conexão com os dados"; render(); return; }
     col = db.collection("atividades");
     col.onSnapshot((snap) => {
-      items = snap.docs.map((doc) => Object.assign({ id: doc.id }, doc.data()));
+      items = snap.docs.map((doc) => { const d = doc.data(); const it = Object.assign({ id: doc.id }, d); if (Array.isArray(d.sessoes)) it.sessoes = d.sessoes.map((s) => Object.assign({}, s)); return it; });
       loaded = true;
       $("#sync-hint").textContent = "Sincronizado · alterações aparecem para todos em tempo real";
       render();
