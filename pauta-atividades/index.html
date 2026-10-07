@@ -1,9 +1,9 @@
-<title>Pauta de Atividades D&amp;A</title>
+<title>Pauta de Actividades D&amp;A</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* DDI · Data & Decision Intelligence — tokens do Cortex. Layout: barra de marca + indicadores + três visões (prioridades, agenda, frentes) */
+/* DDI · Data & Decision Intelligence — tokens del Cortex. Layout: barra de marca + indicadores + tres vistas (prioridades, agenda, frentes) */
 :root {
   --ground: #FBFAFC; --surface: #FFFFFF; --surface-2: #F6F5F8; --ink: #1D1B21; --ink-2: #43404A;
   --muted: #6C6873; --faint: #9B97A2; --line: #E9E7EC; --line-2: #F1F0F4;
@@ -77,14 +77,14 @@ h1 { font-weight: 700; font-size: clamp(24px, 3vw, 30px); line-height: 1.1; marg
 .kpi.alert .v { color: var(--crit); }
 .kpi.todo .v { color: var(--accent-ink); }
 
-/* Abas */
+/* Pestañas */
 .tabs-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
 .tabs { display: inline-flex; background: var(--line-2); border: 1px solid var(--line); border-radius: 999px; padding: 2px; gap: 2px; flex-wrap: wrap; }
 .tab { border: 0; background: transparent; padding: 6px 14px; border-radius: 999px; font-weight: 600; font-size: 13px; color: var(--muted); }
 .tab[aria-selected="true"] { background: var(--surface); color: var(--accent-ink); box-shadow: var(--shadow); }
 .hint { color: var(--muted); font-size: 12px; }
 
-/* Quadro de priorização */
+/* Tablero de priorización */
 .board { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; align-items: start; }
 .col { background: var(--surface-2); border: 1px dashed transparent; border-radius: var(--radius); padding: 10px; display: flex; flex-direction: column; gap: 8px; min-height: 140px; min-width: 0; }
 .col.drop { border-color: var(--accent); background: var(--accent-wash); }
@@ -334,34 +334,34 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
   <path d="M373.65350000000007 190.234Q372.7565000000001 190.234 372.0545000000001 189.93175000000002Q371.3525000000001 189.6295 370.87475000000006 189.103Q370.39700000000005 188.5765 370.1435 187.88425Q369.89000000000004 187.192 369.89000000000004 186.3925Q369.89000000000004 185.281 370.43600000000004 184.267Q370.9820000000001 183.253 372.32750000000004 182.5315Q371.74250000000006 181.77100000000002 371.40125000000006 181.04950000000002Q371.06000000000006 180.328 371.06000000000006 179.50900000000001Q371.06000000000006 178.768 371.34275 178.15375Q371.62550000000005 177.5395 372.11300000000006 177.091Q372.60050000000007 176.6425 373.2732500000001 176.39875Q373.9460000000001 176.155 374.70650000000006 176.155Q375.38900000000007 176.155 375.95450000000005 176.35Q376.52000000000004 176.545 376.95875 176.857Q377.39750000000004 177.169 377.69000000000005 177.56875000000002Q377.9825000000001 177.9685 378.1385000000001 178.378L376.5590000000001 179.197Q376.32500000000005 178.5925 375.8375000000001 178.21224999999998Q375.3500000000001 177.832 374.6675000000001 177.832Q373.92650000000003 177.832 373.46825 178.29025000000001Q373.01000000000005 178.7485 373.01000000000005 179.47V179.6065Q373.01000000000005 179.899 373.0880000000001 180.172Q373.16600000000005 180.445 373.34150000000005 180.757Q373.51700000000005 181.069 373.79975 181.44925Q374.08250000000004 181.8295 374.4920000000001 182.356L375.97400000000005 184.189L377.20250000000004 185.8075H377.30000000000007Q377.4365000000001 185.086 377.47550000000007 184.15Q377.51450000000006 183.214 377.53400000000005 182.395H380.5955000000001V184.0525H379.1720000000001Q379.05500000000006 184.8715 378.90875000000005 185.56375Q378.76250000000005 186.256 378.43100000000004 187.075L380.86850000000004 190.0H378.50900000000007L376.87100000000004 188.05H376.7540000000001Q376.53950000000003 189.0445 375.73025000000007 189.63925Q374.92100000000005 190.234 373.65350000000007 190.234ZM374.19950000000006 188.4985Q374.86250000000007 188.4985 375.39875000000006 188.23525Q375.93500000000006 187.972 376.26650000000006 187.4065L373.244 183.682Q372.50300000000004 184.2085 372.23 184.84224999999998Q371.95700000000005 185.476 371.95700000000005 186.1975V186.373Q371.95700000000005 187.3675 372.5712500000001 187.933Q373.18550000000005 188.4985 374.19950000000006 188.4985Z" fill="#E00076"/>
   <path d="M403.69900000000007 176.389H407.75500000000005Q410.36800000000005 176.389 411.62575000000004 178.1245Q412.8835000000001 179.86 412.8835000000001 183.1945Q412.8835000000001 186.529 411.62575000000004 188.2645Q410.36800000000005 190.0 407.75500000000005 190.0H403.69900000000007ZM407.6185000000001 188.206Q409.12000000000006 188.206 409.85125000000005 187.20175Q410.5825000000001 186.1975 410.5825000000001 184.3255V182.0635Q410.5825000000001 180.1915 409.85125000000005 179.18725Q409.12000000000006 178.183 407.6185000000001 178.183H405.8635000000001V188.206Z M420.0770000000001 190.0V176.389H428.5985000000001V178.222H422.2610000000001V182.1805H428.3645000000001V184.0135H422.2610000000001V188.167H428.5985000000001V190.0Z M440.9400000000001 190.234Q438.3465000000001 190.234 437.0887500000001 188.401Q435.8310000000001 186.568 435.8310000000001 183.1945Q435.8310000000001 179.821 437.0887500000001 177.988Q438.3465000000001 176.155 440.9400000000001 176.155Q441.9345000000001 176.155 442.6657500000001 176.41825Q443.3970000000001 176.6815 443.9235000000001 177.13975Q444.4500000000001 177.598 444.8107500000001 178.21225Q445.1715000000001 178.8265 445.4055000000001 179.5285L443.4360000000001 180.1915Q443.2800000000001 179.7235 443.0850000000001 179.31400000000002Q442.8900000000001 178.9045 442.5975000000001 178.61200000000002Q442.3050000000001 178.3195 441.90525000000014 178.144Q441.5055000000001 177.9685 440.9205000000001 177.9685Q439.4775000000001 177.9685 438.81450000000007 179.07025Q438.1515000000001 180.172 438.1515000000001 182.044V184.345Q438.1515000000001 186.217 438.81450000000007 187.31875000000002Q439.4775000000001 188.4205 440.9205000000001 188.4205Q441.5055000000001 188.4205 441.90525000000014 188.245Q442.3050000000001 188.0695 442.5975000000001 187.777Q442.8900000000001 187.4845 443.0850000000001 187.075Q443.2800000000001 186.6655 443.4360000000001 186.1975L445.4055000000001 186.8605Q445.1715000000001 187.5625 444.8107500000001 188.17675Q444.4500000000001 188.791 443.9235000000001 189.24925000000002Q443.3970000000001 189.7075 442.6657500000001 189.97075Q441.9345000000001 190.234 440.9400000000001 190.234Z M452.5600000000001 190.0V188.3425H455.7580000000001V178.0465H452.5600000000001V176.389H461.1400000000001V178.0465H457.9420000000001V188.3425H461.1400000000001V190.0Z M473.03300000000013 190.234Q471.25850000000014 190.234 470.04950000000014 189.61Q468.84050000000013 188.986 468.0605000000001 187.9525L469.4645000000001 186.607Q470.24450000000013 187.543 471.1220000000001 187.98175Q471.9995000000001 188.4205 473.1110000000001 188.4205Q474.39800000000014 188.4205 475.09025000000014 187.8355Q475.78250000000014 187.2505 475.78250000000014 186.1585Q475.78250000000014 185.281 475.27550000000014 184.80325Q474.76850000000013 184.3255 473.54000000000013 184.111L472.0580000000001 183.877Q471.08300000000014 183.721 470.42000000000013 183.36025Q469.7570000000001 182.9995 469.3475000000001 182.50225Q468.9380000000001 182.005 468.7527500000001 181.39075Q468.5675000000001 180.7765 468.5675000000001 180.094Q468.5675000000001 178.1635 469.81550000000016 177.15925Q471.06350000000015 176.155 473.2475000000001 176.155Q474.8660000000001 176.155 476.0067500000001 176.67175Q477.14750000000015 177.1885 477.84950000000015 178.1245L476.48450000000014 179.4895Q475.9190000000001 178.807 475.1487500000001 178.38774999999998Q474.37850000000014 177.9685 473.2475000000001 177.9685Q472.0385000000001 177.9685 471.40475000000015 178.48525Q470.77100000000013 179.002 470.77100000000013 179.9965Q470.77100000000013 180.835 471.26825000000014 181.31275Q471.76550000000015 181.7905 473.03300000000013 182.005L474.4760000000001 182.2585Q476.30900000000014 182.59 477.14750000000015 183.59425Q477.9860000000001 184.5985 477.9860000000001 186.0415Q477.9860000000001 186.9775 477.66425000000015 187.7575Q477.34250000000014 188.5375 476.7087500000001 189.08350000000002Q476.0750000000001 189.6295 475.1487500000001 189.93175000000002Q474.22250000000014 190.234 473.03300000000013 190.234Z M485.16000000000014 190.0V188.3425H488.3580000000001V178.0465H485.16000000000014V176.389H493.7400000000001V178.0465H490.54200000000014V188.3425H493.7400000000001V190.0Z M505.75000000000017 190.234Q504.46300000000014 190.234 503.5172500000001 189.75625000000002Q502.5715000000001 189.2785 501.95725000000016 188.38150000000002Q501.34300000000013 187.4845 501.05050000000017 186.178Q500.75800000000015 184.8715 500.75800000000015 183.1945Q500.75800000000015 181.537 501.05050000000017 180.22075Q501.34300000000013 178.9045 501.95725000000016 178.0075Q502.5715000000001 177.1105 503.5172500000001 176.63275Q504.46300000000014 176.155 505.75000000000017 176.155Q507.03700000000015 176.155 507.9827500000001 176.63275Q508.92850000000016 177.1105 509.5427500000002 178.0075Q510.15700000000015 178.9045 510.44950000000017 180.22075Q510.74200000000013 181.537 510.74200000000013 183.1945Q510.74200000000013 184.8715 510.44950000000017 186.178Q510.15700000000015 187.4845 509.5427500000002 188.38150000000002Q508.92850000000016 189.2785 507.9827500000001 189.75625000000002Q507.03700000000015 190.234 505.75000000000017 190.234ZM505.75000000000017 188.4205Q507.21250000000015 188.4205 507.8170000000001 187.31875000000002Q508.42150000000015 186.217 508.42150000000015 184.3255V182.044Q508.42150000000015 180.172 507.8170000000001 179.07025Q507.21250000000015 177.9685 505.75000000000017 177.9685Q504.28750000000014 177.9685 503.6830000000001 179.07025Q503.07850000000013 180.172 503.07850000000013 182.044V184.345Q503.07850000000013 186.217 503.6830000000001 187.31875000000002Q504.28750000000014 188.4205 505.75000000000017 188.4205Z M519.6905000000002 179.5285H519.5150000000002V190.0H517.6040000000002V176.389H520.4120000000001L524.4095000000002 186.8605H524.5850000000002V176.389H526.4960000000002V190.0H523.6880000000001Z M550.36 190.0V188.3425H553.5580000000001V178.0465H550.36V176.389H558.94V178.0465H555.7420000000001V188.3425H558.94V190.0Z M568.5905 179.5285H568.4150000000001V190.0H566.504V176.389H569.312L573.3095000000001 186.8605H573.485V176.389H575.3960000000001V190.0H572.588Z M588.342 178.222V190.0H586.158V178.222H581.8874999999999V176.389H592.6125V178.222Z M599.377 190.0V176.389H607.8984999999999V178.222H601.5609999999999V182.1805H607.6645V184.0135H601.5609999999999V188.167H607.8984999999999V190.0Z M616.1059999999999 190.0V176.389H618.2899999999998V188.167H624.4909999999999V190.0Z M632.4059999999998 190.0V176.389H634.5899999999998V188.167H640.7909999999998V190.0Z M648.1599999999997 190.0V188.3425H651.3579999999998V178.0465H648.1599999999997V176.389H656.7399999999998V178.0465H653.5419999999998V188.3425H656.7399999999998V190.0Z M671.2849999999997 188.128H671.1484999999998Q670.9729999999997 188.5375 670.7292499999998 188.91775Q670.4854999999998 189.298 670.1247499999997 189.59050000000002Q669.7639999999998 189.883 669.2569999999998 190.0585Q668.7499999999998 190.234 668.0869999999998 190.234Q665.9614999999998 190.234 664.8889999999998 188.4205Q663.8164999999998 186.607 663.8164999999998 183.292Q663.8164999999998 179.821 665.0449999999998 177.988Q666.2734999999998 176.155 668.8084999999998 176.155Q669.8029999999998 176.155 670.5537499999998 176.428Q671.3044999999997 176.701 671.8309999999997 177.15925Q672.3574999999997 177.6175 672.7084999999997 178.23175Q673.0594999999997 178.846 673.2739999999998 179.5285L671.3044999999997 180.1915Q671.1484999999998 179.743 670.9534999999998 179.34325Q670.7584999999998 178.9435 670.4757499999998 178.63150000000002Q670.1929999999998 178.3195 669.7932499999997 178.144Q669.3934999999998 177.9685 668.8279999999997 177.9685Q667.4044999999998 177.9685 666.7707499999997 179.07025Q666.1369999999997 180.172 666.1369999999997 182.044V184.2085Q666.1369999999997 185.1445 666.2734999999998 185.9245Q666.4099999999997 186.7045 666.7317499999997 187.26024999999998Q667.0534999999998 187.816 667.5702499999998 188.128Q668.0869999999998 188.44 668.8279999999997 188.44Q670.0174999999997 188.44 670.6512499999997 187.72825Q671.2849999999997 187.0165 671.2849999999997 185.905V184.6765H668.6524999999998V183.0385H673.2739999999998V190.0H671.2849999999997Z M680.8769999999997 190.0V176.389H689.3984999999997V178.222H683.0609999999997V182.1805H689.1644999999997V184.0135H683.0609999999997V188.167H689.3984999999997V190.0Z M698.9904999999997 179.5285H698.8149999999997V190.0H696.9039999999997V176.389H699.7119999999996L703.7094999999997 186.8605H703.8849999999996V176.389H705.7959999999997V190.0H702.9879999999996Z M718.0399999999996 190.234Q715.4464999999996 190.234 714.1887499999996 188.401Q712.9309999999996 186.568 712.9309999999996 183.1945Q712.9309999999996 179.821 714.1887499999996 177.988Q715.4464999999996 176.155 718.0399999999996 176.155Q719.0344999999996 176.155 719.7657499999996 176.41825Q720.4969999999996 176.6815 721.0234999999996 177.13975Q721.5499999999996 177.598 721.9107499999996 178.21225Q722.2714999999996 178.8265 722.5054999999996 179.5285L720.5359999999996 180.1915Q720.3799999999997 179.7235 720.1849999999997 179.31400000000002Q719.9899999999997 178.9045 719.6974999999996 178.61200000000002Q719.4049999999996 178.3195 719.0052499999997 178.144Q718.6054999999997 177.9685 718.0204999999996 177.9685Q716.5774999999996 177.9685 715.9144999999996 179.07025Q715.2514999999996 180.172 715.2514999999996 182.044V184.345Q715.2514999999996 186.217 715.9144999999996 187.31875000000002Q716.5774999999996 188.4205 718.0204999999996 188.4205Q718.6054999999997 188.4205 719.0052499999997 188.245Q719.4049999999996 188.0695 719.6974999999996 187.777Q719.9899999999997 187.4845 720.1849999999997 187.075Q720.3799999999997 186.6655 720.5359999999996 186.1975L722.5054999999996 186.8605Q722.2714999999996 187.5625 721.9107499999996 188.17675Q721.5499999999996 188.791 721.0234999999996 189.24925000000002Q720.4969999999996 189.7075 719.7657499999996 189.97075Q719.0344999999996 190.234 718.0399999999996 190.234Z M729.7769999999996 190.0V176.389H738.2984999999995V178.222H731.9609999999996V182.1805H738.0644999999996V184.0135H731.9609999999996V188.167H738.2984999999995V190.0Z" fill="#9498A0"/>
 </svg></span>
-  <span class="unit">Diretoria Global de Dados &amp; Analítica</span>
+  <span class="unit">Dirección Global de Datos &amp; Analítica</span>
 </div></div>
 
 <div class="wrap">
   <header class="top">
     <div>
-      <div class="eyebrow">Pauta da diretoria</div>
-      <h1>Pauta de Atividades</h1>
-      <p class="lede">O que está em execução, quanto tempo consome e em que ordem deve andar. Arraste os cartões entre as colunas, ou use o seletor, para definir a prioridade.</p>
+      <div class="eyebrow">Pauta de la dirección</div>
+      <h1>Pauta de Actividades</h1>
+      <p class="lede">Qué está en ejecución, cuánto tiempo consume y en qué orden debe avanzar. Arrastra las tarjetas entre columnas, o usa el selector, para definir la prioridad.</p>
     </div>
     <div class="actions">
-      <button class="btn" id="btn-copy" type="button">Copiar resumo</button>
-      <button class="btn pri" id="btn-new" type="button">+ Nova atividade</button>
+      <button class="btn" id="btn-copy" type="button">Copiar resumen</button>
+      <button class="btn pri" id="btn-new" type="button">+ Nueva actividad</button>
     </div>
   </header>
 
-  <section class="kpis" id="kpis" aria-label="Indicadores do período"></section>
+  <section class="kpis" id="kpis" aria-label="Indicadores del período"></section>
 
   <div class="tabs-row">
     <div class="tabs" role="tablist">
-      <button class="tab" role="tab" id="tab-prior" data-view="prior" type="button">Priorização</button>
+      <button class="tab" role="tab" id="tab-prior" data-view="prior" type="button">Priorización</button>
       <button class="tab" role="tab" id="tab-agenda" data-view="agenda" type="button">Agenda</button>
-      <button class="tab" role="tab" id="tab-frentes" data-view="frentes" type="button">Frentes de trabalho</button>
+      <button class="tab" role="tab" id="tab-frentes" data-view="frentes" type="button">Frentes de trabajo</button>
     </div>
     <div class="hint" id="sync-hint">Conectando…</div>
   </div>
 
-  <div id="readonly" class="readonly-note" hidden>Você está vendo em modo leitura. Peça acesso de Colaborador para priorizar e comentar.</div>
+  <div id="readonly" class="readonly-note" hidden>Estás en modo lectura. Pide acceso de Colaborador para priorizar y comentar.</div>
   <div id="copy-box" hidden></div>
   <main id="view"></main>
 </div>
@@ -369,40 +369,40 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
 <dialog id="dlg">
   <form class="dlg" id="form" novalidate>
     <div class="dlg-head">
-      <h2 id="dlg-title">Nova atividade</h2>
-      <button type="button" class="icon-btn" id="dlg-close" aria-label="Fechar">✕</button>
+      <h2 id="dlg-title">Nueva actividad</h2>
+      <button type="button" class="icon-btn" id="dlg-close" aria-label="Cerrar">✕</button>
     </div>
     <div class="dlg-body">
-      <div class="field"><label for="f-titulo">Atividade</label><input id="f-titulo" required placeholder="Ex.: Revisão da arquitetura do Córtex"></div>
-      <div class="field"><label for="f-descricao">Contexto / objetivo</label><textarea id="f-descricao" rows="2" placeholder="Para que serve, o que se espera como resultado"></textarea></div>
+      <div class="field"><label for="f-titulo">Actividad</label><input id="f-titulo" required placeholder="Ej.: Revisión de la arquitectura del Córtex"></div>
+      <div class="field"><label for="f-descricao">Contexto / objetivo</label><textarea id="f-descricao" rows="2" placeholder="Para qué sirve, qué resultado se espera"></textarea></div>
       <div class="field s3"><label for="f-tipo">Tipo</label>
-        <select id="f-tipo"><option value="reuniao">Reunião</option><option value="entrega">Entrega / documento</option><option value="rotina">Acompanhamento</option></select></div>
-      <div class="field s3"><label for="f-frente">Frente</label><input id="f-frente" list="frentes-list" placeholder="Ex.: Córtex / Sumun Analytics"><datalist id="frentes-list"></datalist></div>
+        <select id="f-tipo"><option value="reuniao">Reunión</option><option value="entrega">Entregable / documento</option><option value="rotina">Seguimiento</option></select></div>
+      <div class="field s3"><label for="f-frente">Frente</label><input id="f-frente" list="frentes-list" placeholder="Ej.: Córtex / Sumun Analytics"><datalist id="frentes-list"></datalist></div>
       <div class="blocks">
-        <div class="blk-h">Blocos de tempo</div>
-        <div class="blk-head help"><span>Dia</span><span>Início</span><span>Fim</span><span>Horas</span><span></span></div>
+        <div class="blk-h">Bloques de tiempo</div>
+        <div class="blk-head help"><span>Día</span><span>Inicio</span><span>Fin</span><span>Horas</span><span></span></div>
         <div id="blk-list" style="display:flex;flex-direction:column;gap:6px"></div>
         <div class="foot">
-          <button type="button" class="btn sm" id="blk-add">+ Adicionar bloco</button>
+          <button type="button" class="btn sm" id="blk-add">+ Añadir bloque</button>
           <span class="blk-total" id="blk-total"></span>
         </div>
-        <span class="help">Com início e fim, as horas saem do horário. Sem horário, informe só as horas (bloco flexível no dia). Atividades que se estendem por vários dias recebem um bloco por dia.</span>
+        <span class="help">Con inicio y fin, las horas se calculan del horario. Sin horario, indica solo las horas (bloque flexible en el día). Las actividades de varios días llevan un bloque por día.</span>
       </div>
-      <div class="field s3"><label for="f-status">Status</label>
-        <select id="f-status"><option value="agendar">A agendar</option><option value="planejada">Planejada</option><option value="andamento">Em andamento</option><option value="bloqueada">Bloqueada</option><option value="concluida">Concluída</option></select></div>
-      <div class="field s3"><label for="f-pessoas">Pessoas envolvidas</label><input id="f-pessoas" placeholder="Ex.: Luís Felipe, Luís Haruo"></div>
+      <div class="field s3"><label for="f-status">Estado</label>
+        <select id="f-status"><option value="agendar">Por agendar</option><option value="planejada">Planificada</option><option value="andamento">En curso</option><option value="bloqueada">Bloqueada</option><option value="concluida">Completada</option></select></div>
+      <div class="field s3"><label for="f-pessoas">Personas involucradas</label><input id="f-pessoas" placeholder="Ej.: Luís Felipe, Luís Haruo"></div>
       <div class="dir-grid">
-        <div class="cap">Decisão do diretor</div>
-        <div class="field"><label for="f-prioridade">Prioridade</label>
-          <select id="f-prioridade"><option value="">Triagem (sem prioridade)</option><option value="P1">P1 · Crítica</option><option value="P2">P2 · Alta</option><option value="P3">P3 · Média</option><option value="P4">P4 · Pode esperar</option></select></div>
-        <div class="field"><label for="f-nota">Orientação / comentário</label><textarea id="f-nota" rows="2" placeholder="Ex.: delegar ao Luís Haruo; entregar até sexta"></textarea></div>
+        <div class="cap">Decisión del director</div>
+        <div class="field"><label for="f-prioridade">Prioridad</label>
+          <select id="f-prioridade"><option value="">Triaje (sin prioridad)</option><option value="P1">P1 · Crítica</option><option value="P2">P2 · Alta</option><option value="P3">P3 · Media</option><option value="P4">P4 · Puede esperar</option></select></div>
+        <div class="field"><label for="f-nota">Orientación / comentario</label><textarea id="f-nota" rows="2" placeholder="Ej.: delegar en Luís Haruo; entregar antes del viernes"></textarea></div>
       </div>
     </div>
     <div class="dlg-foot">
-      <button type="button" class="btn danger" id="btn-del" hidden>Excluir</button>
+      <button type="button" class="btn danger" id="btn-del" hidden>Eliminar</button>
       <div class="r">
         <button type="button" class="btn" id="btn-cancel">Cancelar</button>
-        <button type="submit" class="btn pri" id="btn-save">Salvar</button>
+        <button type="submit" class="btn pri" id="btn-save">Guardar</button>
       </div>
     </div>
   </form>
@@ -413,18 +413,18 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
 <script>
 (function () {
   "use strict";
-  const CAP = 8; // horas de trabalho por dia, para o indicador de capacidade
-  const TIPOS = { reuniao: "Reunião", entrega: "Entrega", rotina: "Acompanhamento" };
-  const STATUS = { agendar: "A agendar", planejada: "Planejada", andamento: "Em andamento", bloqueada: "Bloqueada", concluida: "Concluída" };
+  const CAP = 8; // horas de trabajo por día, para el indicador de capacidad
+  const TIPOS = { reuniao: "Reunión", entrega: "Entregable", rotina: "Seguimiento" };
+  const STATUS = { agendar: "Por agendar", planejada: "Planificada", andamento: "En curso", bloqueada: "Bloqueada", concluida: "Completada" };
   const PRIOS = [
-    { k: "", label: "Triagem", sub: "Aguardando priorização" },
-    { k: "P1", label: "P1 · Crítica", sub: "Fazer já" },
-    { k: "P2", label: "P2 · Alta", sub: "Nesta semana" },
-    { k: "P3", label: "P3 · Média", sub: "Próximas semanas" },
-    { k: "P4", label: "P4 · Pode esperar", sub: "Backlog ou delegar" }
+    { k: "", label: "Triaje", sub: "Pendiente de priorizar" },
+    { k: "P1", label: "P1 · Crítica", sub: "Hacer ya" },
+    { k: "P2", label: "P2 · Alta", sub: "Esta semana" },
+    { k: "P3", label: "P3 · Media", sub: "Próximas semanas" },
+    { k: "P4", label: "P4 · Puede esperar", sub: "Backlog o delegar" }
   ];
   const ORBS = ["#E00076", "#00A1E4", "#7EC352", "#FFCB05", "#9B97A2"];
-  const DIAS = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
+  const DIAS = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
 
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -451,7 +451,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
   const toMin = (t) => { if (!t) return null; const [h, m] = t.split(":").map(Number); return h * 60 + m; };
   const fmtH = (h) => h ? (Number.isInteger(h) ? h : h.toFixed(1).replace(".", ",")) + "h" : "—";
 
-  // Uma atividade tem um ou mais blocos de tempo: {data, inicio, fim, horas}
+  // Una actividad tiene uno o más bloques de tiempo: {data, inicio, fim, horas}
   function sess(it) {
     if (Array.isArray(it.sessoes)) return it.sessoes;
     return it.data || it.inicio || Number(it.horas) ? [{ data: it.data || "", inicio: it.inicio || "", fim: it.fim || "", horas: Number(it.horas) || 0 }] : [];
@@ -462,12 +462,12 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
   const dated = (it) => sess(it).filter((s) => s.data).sort((a, b) => (a.data + (a.inicio || "")).localeCompare(b.data + (b.inicio || "")));
   function when(it) {
     const d = dated(it);
-    if (!d.length) return "Sem data";
-    if (d.length === 1) { const s = d[0]; return fmtDate(s.data) + (s.inicio ? " · " + s.inicio + (s.fim ? "–" + s.fim : "") : " · flexível"); }
+    if (!d.length) return "Sin fecha";
+    if (d.length === 1) { const s = d[0]; return fmtDate(s.data) + (s.inicio ? " · " + s.inicio + (s.fim ? "–" + s.fim : "") : " · flexible"); }
     const first = d[0].data, last = d[d.length - 1].data;
-    return (first === last ? fmtDate(first) : fmtDate(first) + " → " + fmtDate(last)) + " · " + d.length + " blocos";
+    return (first === last ? fmtDate(first) : fmtDate(first) + " → " + fmtDate(last)) + " · " + d.length + " bloques";
   }
-  // período padrão: de hoje até sexta na semana atual; semanas futuras/passadas mostram seg a sex
+  // período por defecto: de hoy al viernes en la semana actual; otras semanas muestran lun a vie
   function range() {
     const mon = mondayOf(weekAnchor), fri = addDays(mon, 4);
     let start = mon;
@@ -475,7 +475,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     return { start, end: fri, mon };
   }
 
-  // ---------- conflitos de horário ----------
+  // ---------- conflictos de horario ----------
   function conflicts() {
     const map = new Map();
     const list = [];
@@ -496,8 +496,8 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
 
   const byOrder = (a, b) => (Number(a.ordem) || 0) - (Number(b.ordem) || 0) || String(a.titulo).localeCompare(String(b.titulo));
   function orbFor(frente) {
-    const fs = [...new Set(items.map((i) => i.frente || "Sem frente"))].sort();
-    return ORBS[Math.max(0, fs.indexOf(frente || "Sem frente")) % ORBS.length];
+    const fs = [...new Set(items.map((i) => i.frente || "Sin frente"))].sort();
+    return ORBS[Math.max(0, fs.indexOf(frente || "Sin frente")) % ORBS.length];
   }
 
   // ---------- render ----------
@@ -508,9 +508,9 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     items.forEach((it) => sess(it).forEach((s) => { delete s.__conf; }));
     renderKpis();
     const v = $("#view");
-    if (!db && loaded) { v.innerHTML = `<div class="state"><strong>Os dados não abriram nesta visualização</strong>Abra a página pelo link do claude.ai com sua conta conectada para ver e editar as atividades.</div>`; return; }
-    if (!loaded) { v.innerHTML = `<div class="state"><strong>Carregando atividades…</strong>As atividades lançadas aparecem aqui assim que a conexão responder.</div>`; return; }
-    if (!items.length) { v.innerHTML = `<div class="state"><strong>Nenhuma atividade lançada ainda</strong>Use “+ Nova atividade” para registrar a primeira: blocos de tempo, frente e pessoas envolvidas.</div>`; return; }
+    if (!db && loaded) { v.innerHTML = `<div class="state"><strong>Los datos no se abrieron en esta vista</strong>Abre la página desde el enlace de claude.ai con tu cuenta conectada para ver y editar las actividades.</div>`; return; }
+    if (!loaded) { v.innerHTML = `<div class="state"><strong>Cargando actividades…</strong>Las actividades registradas aparecen aquí en cuanto responda la conexión.</div>`; return; }
+    if (!items.length) { v.innerHTML = `<div class="state"><strong>Aún no hay actividades</strong>Usa “+ Nueva actividad” para registrar la primera: bloques de tiempo, frente y personas involucradas.</div>`; return; }
     if (view === "prior") renderBoard(v);
     else if (view === "agenda") renderAgenda(v);
     else renderFrentes(v);
@@ -538,31 +538,31 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     const open = items.filter((i) => i.status !== "concluida");
     const triage = open.filter((i) => !i.prioridade).length;
     const conf = conflicts();
-    const periodo = ddmm(start) + " a " + ddmm(end);
+    const periodo = ddmm(start) + " al " + ddmm(end);
     const k = (l, v, s, cls) => `<div class="kpi ${cls || ""}"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`;
     $("#kpis").innerHTML =
-      k("Horas comprometidas", fmtH(L.total), periodo + " · capacidade " + capH + "h", L.total > capH ? "alert" : "") +
-      k("Em reuniões", fmtH(L.meet), L.total ? Math.round((L.meet / L.total) * 100) + "% do tempo no período" : "no período") +
-      k("Dias acima de " + CAP + "h", overDays, overDays ? "sobrecarga na agenda" : "dentro da capacidade", overDays ? "alert" : "") +
-      k("Aguardando priorização", triage, "de " + open.length + " em aberto", triage ? "todo" : "") +
-      k("Conflitos de horário", conf.size, conf.size ? "atividades sobrepostas" : "nenhuma sobreposição", conf.size ? "alert" : "");
+      k("Horas comprometidas", fmtH(L.total), periodo + " · capacidad " + capH + "h", L.total > capH ? "alert" : "") +
+      k("En reuniones", fmtH(L.meet), L.total ? Math.round((L.meet / L.total) * 100) + "% del tiempo del período" : "en el período") +
+      k("Días por encima de " + CAP + "h", overDays, overDays ? "sobrecarga en la agenda" : "dentro de la capacidad", overDays ? "alert" : "") +
+      k("Pendientes de priorizar", triage, "de " + open.length + " abiertas", triage ? "todo" : "") +
+      k("Conflictos de horario", conf.size, conf.size ? "actividades solapadas" : "sin solapamientos", conf.size ? "alert" : "");
   }
 
   function cardHtml(it, list, idx, conf, withCtl) {
     const c = conf.get(it.id);
-    const opts = PRIOS.map((p) => `<option value="${p.k}"${(it.prioridade || "") === p.k ? " selected" : ""}>${esc(p.k ? p.label : "Triagem")}</option>`).join("");
+    const opts = PRIOS.map((p) => `<option value="${p.k}"${(it.prioridade || "") === p.k ? " selected" : ""}>${esc(p.k ? p.label : "Triaje")}</option>`).join("");
     const cl = c ? [...c] : [];
     return `<article class="card${it.status === "concluida" ? " done" : ""}" data-id="${esc(it.id)}"${canWrite && withCtl ? ' draggable="true"' : ""}>
-      <div class="card-top"><span class="chip tipo-${esc(it.tipo)}">${esc(TIPOS[it.tipo] || "Atividade")}</span><span class="pill st-${esc(it.status)}">${esc(STATUS[it.status] || "")}</span></div>
+      <div class="card-top"><span class="chip tipo-${esc(it.tipo)}">${esc(TIPOS[it.tipo] || "Actividad")}</span><span class="pill st-${esc(it.status)}">${esc(STATUS[it.status] || "")}</span></div>
       <h4><button type="button" data-open="${esc(it.id)}">${esc(it.titulo)}</button></h4>
       ${it.frente ? `<div class="frente">${esc(it.frente)}</div>` : ""}
       <div class="meta"><span>${esc(when(it))}</span><span>${fmtH(dur(it))}</span></div>
-      ${c ? `<div><span class="pill conflict" title="Sobrepõe: ${esc(cl.join(", "))}">Conflito com ${esc(cl.length === 1 ? cl[0] : cl.length + " atividades")}</span></div>` : ""}
-      ${it.notaDiretor ? `<p class="nota"><b>Orientação</b>${esc(it.notaDiretor)}</p>` : ""}
+      ${c ? `<div><span class="pill conflict" title="Se solapa con: ${esc(cl.join(", "))}">Conflicto con ${esc(cl.length === 1 ? cl[0] : cl.length + " actividades")}</span></div>` : ""}
+      ${it.notaDiretor ? `<p class="nota"><b>Orientación</b>${esc(it.notaDiretor)}</p>` : ""}
       ${canWrite && withCtl ? `<div class="card-ctl">
-        <select data-prio="${esc(it.id)}" aria-label="Prioridade de ${esc(it.titulo)}">${opts}</select>
+        <select data-prio="${esc(it.id)}" aria-label="Prioridad de ${esc(it.titulo)}">${opts}</select>
         <button type="button" class="icon-btn" data-move="up" data-id="${esc(it.id)}" ${idx === 0 ? "disabled" : ""} aria-label="Subir">↑</button>
-        <button type="button" class="icon-btn" data-move="down" data-id="${esc(it.id)}" ${idx === list.length - 1 ? "disabled" : ""} aria-label="Descer">↓</button>
+        <button type="button" class="icon-btn" data-move="down" data-id="${esc(it.id)}" ${idx === list.length - 1 ? "disabled" : ""} aria-label="Bajar">↓</button>
       </div>` : ""}
     </article>`;
   }
@@ -574,7 +574,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
       const h = list.filter((i) => i.status !== "concluida").reduce((s, i) => s + dur(i), 0);
       return `<section class="col" data-col="${p.k}">
         <div class="col-head"><div><h3><span class="dot ${p.k || "none"}"></span>${esc(p.label)}</h3><div class="sub">${esc(p.sub)}</div></div><span class="sum">${list.length} · ${fmtH(h)}</span></div>
-        ${list.length ? list.map((it, i) => cardHtml(it, list, i, conf, true)).join("") : `<div class="col-empty">${p.k ? "Arraste atividades para cá" : "Tudo priorizado"}</div>`}
+        ${list.length ? list.map((it, i) => cardHtml(it, list, i, conf, true)).join("") : `<div class="col-empty">${p.k ? "Arrastra actividades aquí" : "Todo priorizado"}</div>`}
       </section>`;
     }).join("")}</div>`;
   }
@@ -584,7 +584,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     return `<button type="button" class="slot${s.__conf ? " conf" : ""}${flex ? " flex" : ""}" data-open="${esc(it.id)}">
       <span class="t">${flex ? `<b>flex.</b>${fmtH(sDur(s))}` : `<b>${esc(s.inicio)}</b>${esc(s.fim)}`}</span>
       <span class="what"><strong>${esc(it.titulo)}</strong>
-        <span class="tags">${it.prioridade ? `<span class="chip pr ${esc(it.prioridade)}">${esc(it.prioridade)}</span>` : `<span class="chip">Triagem</span>`}${flex ? "" : `<span class="chip">${fmtH(sDur(s))}</span>`}${s.__conf ? `<span class="pill conflict">Conflito</span>` : ""}</span>
+        <span class="tags">${it.prioridade ? `<span class="chip pr ${esc(it.prioridade)}">${esc(it.prioridade)}</span>` : `<span class="chip">Triaje</span>`}${flex ? "" : `<span class="chip">${fmtH(sDur(s))}</span>`}${s.__conf ? `<span class="pill conflict">Conflicto</span>` : ""}</span>
       </span></button>`;
   }
 
@@ -599,9 +599,9 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     v.innerHTML = `<div style="display:flex;flex-direction:column;gap:16px">
       <div class="week-nav">
         <button class="icon-btn" type="button" id="wk-prev" aria-label="Semana anterior">‹</button>
-        <span class="label">${isCurrent ? "Hoje a sexta · " : ""}${ddmm(start)} – ${ddmm(end)}</span>
-        <button class="icon-btn" type="button" id="wk-next" aria-label="Próxima semana">›</button>
-        ${isCurrent ? "" : `<button class="btn sm" type="button" id="wk-today">Voltar para hoje</button>`}
+        <span class="label">${isCurrent ? "Hoy al viernes · " : ""}${ddmm(start)} – ${ddmm(end)}</span>
+        <button class="icon-btn" type="button" id="wk-next" aria-label="Semana siguiente">›</button>
+        ${isCurrent ? "" : `<button class="btn sm" type="button" id="wk-today">Volver a hoy</button>`}
       </div>
       <div class="week">${days.map((d) => {
         const ds = iso(d);
@@ -612,29 +612,29 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
         const hF = slots.filter((x) => !timed(x.s)).reduce((t, x) => t + sDur(x.s), 0);
         const tot = hT + hF, over = tot > CAP, scale = Math.max(CAP, tot);
         return `<section class="day${ds === todayIso ? " today" : ""}">
-          <div class="day-head"><div class="row"><b>${DIAS[d.getDay()]} ${ddmm(d)}${ds === todayIso ? " · hoje" : ""}</b><span class="cap${over ? " over" : ""}">${fmtH(tot) === "—" ? "0h" : fmtH(tot)} / ${CAP}h</span></div>
-            <div class="capbar${over ? " over" : ""}" title="${fmtH(hT)} com horário, ${fmtH(hF)} flexível"><i style="width:${(hT / scale) * 100}%"></i><i class="flex" style="width:${(hF / scale) * 100}%"></i></div></div>
-          <div class="slots">${slots.length ? slots.map((x) => slotHtml(x.it, x.s, conf)).join("") : `<div class="day-empty">Livre</div>`}</div></section>`;
+          <div class="day-head"><div class="row"><b>${DIAS[d.getDay()]} ${ddmm(d)}${ds === todayIso ? " · hoy" : ""}</b><span class="cap${over ? " over" : ""}">${fmtH(tot) === "—" ? "0h" : fmtH(tot)} / ${CAP}h</span></div>
+            <div class="capbar${over ? " over" : ""}" title="${fmtH(hT)} con horario, ${fmtH(hF)} flexible"><i style="width:${(hT / scale) * 100}%"></i><i class="flex" style="width:${(hF / scale) * 100}%"></i></div></div>
+          <div class="slots">${slots.length ? slots.map((x) => slotHtml(x.it, x.s, conf)).join("") : `<div class="day-empty">Libre</div>`}</div></section>`;
       }).join("")}</div>
-      <section style="display:flex;flex-direction:column;gap:10px"><h3 class="section-title">Sem data definida <span class="hint">(${undated.length})</span></h3>
-        ${undated.length ? `<div class="undated-list">${undated.map((it) => cardHtml(it, undated, 0, conf, false)).join("")}</div>` : `<div class="hint">Todas as atividades em aberto têm data.</div>`}
+      <section style="display:flex;flex-direction:column;gap:10px"><h3 class="section-title">Sin fecha definida <span class="hint">(${undated.length})</span></h3>
+        ${undated.length ? `<div class="undated-list">${undated.map((it) => cardHtml(it, undated, 0, conf, false)).join("")}</div>` : `<div class="hint">Todas las actividades abiertas tienen fecha.</div>`}
       </section></div>`;
   }
 
   function renderFrentes(v) {
     const groups = new Map();
-    items.forEach((i) => { const f = i.frente || "Sem frente"; if (!groups.has(f)) groups.set(f, []); groups.get(f).push(i); });
+    items.forEach((i) => { const f = i.frente || "Sin frente"; if (!groups.has(f)) groups.set(f, []); groups.get(f).push(i); });
     const arr = [...groups.entries()].map(([f, list]) => ({ f, list, h: list.reduce((s, i) => s + dur(i), 0) })).sort((a, b) => b.h - a.h || b.list.length - a.list.length);
     const total = arr.reduce((t, g) => t + g.h, 0);
     const rank = { P1: 1, P2: 2, P3: 3, P4: 4, "": 5 };
     v.innerHTML = `<div style="display:flex;flex-direction:column;gap:12px">
-      <div class="legend"><span><span class="dot P1"></span>P1</span><span><span class="dot P2"></span>P2</span><span><span class="dot P3"></span>P3</span><span><span class="dot P4"></span>P4</span><span><span class="dot none"></span>Triagem</span><span>Barra: composição por prioridade (nº de atividades)</span></div>
+      <div class="legend"><span><span class="dot P1"></span>P1</span><span><span class="dot P2"></span>P2</span><span><span class="dot P3"></span>P3</span><span><span class="dot P4"></span>P4</span><span><span class="dot none"></span>Triaje</span><span>Barra: composición por prioridad (nº de actividades)</span></div>
       <div class="fronts">${arr.map(({ f, list, h }) => {
         const counts = { P1: 0, P2: 0, P3: 0, P4: 0, "": 0 };
         list.forEach((i) => counts[i.prioridade || ""]++);
         const bar = Object.entries(counts).filter(([, n]) => n).map(([k, n]) => `<i class="${k || "none"}" style="width:${(n / list.length) * 100}%"></i>`).join("");
         const sorted = list.slice().sort((a, b) => rank[a.prioridade || ""] - rank[b.prioridade || ""] || byOrder(a, b));
-        return `<section class="front"><div class="front-head"><h3><span class="orb" style="background:${orbFor(f)}"></span>${esc(f)}</h3><span class="n">${list.length} ativ. · ${fmtH(h)}${total ? " · " + Math.round((h / total) * 100) + "%" : ""}</span></div>
+        return `<section class="front"><div class="front-head"><h3><span class="orb" style="background:${orbFor(f)}"></span>${esc(f)}</h3><span class="n">${list.length} act. · ${fmtH(h)}${total ? " · " + Math.round((h / total) * 100) + "%" : ""}</span></div>
           <div class="bar">${bar}</div>
           <ul>${sorted.map((i) => `<li><button type="button" data-open="${esc(i.id)}">${i.prioridade ? `<span class="chip pr ${esc(i.prioridade)}">${esc(i.prioridade)}</span>` : `<span class="chip">—</span>`}<span class="tt">${esc(i.titulo)}</span><span class="h">${fmtH(dur(i))}</span></button></li>`).join("")}</ul>
         </section>`;
@@ -646,22 +646,22 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     $("#frentes-list").innerHTML = set.map((f) => `<option value="${esc(f)}"></option>`).join("");
   }
 
-  // ---------- escrita ----------
+  // ---------- escritura ----------
   function toast(msg) {
     const t = $("#toast"); t.textContent = msg; t.hidden = false;
     clearTimeout(toast._t); toast._t = setTimeout(() => { t.hidden = true; }, 2600);
   }
   function writeFailed(e) {
-    if (e && e.code === "invalid_argument") { canWrite = false; render(); toast("Sem permissão para editar. Peça acesso de Colaborador."); return; }
-    if (e && e.code === "quota_exceeded") { toast("Limite de armazenamento atingido. Exclua atividades antigas."); return; }
-    toast("Não foi possível salvar. Tente de novo em instantes.");
+    if (e && e.code === "invalid_argument") { canWrite = false; render(); toast("Sin permiso para editar. Pide acceso de Colaborador."); return; }
+    if (e && e.code === "quota_exceeded") { toast("Límite de almacenamiento alcanzado. Elimina actividades antiguas."); return; }
+    toast("No se pudo guardar. Inténtalo de nuevo en unos instantes.");
   }
   const stamp = () => new Date().toISOString();
 
   async function setPriority(id, k) {
     const it = items.find((i) => i.id === id); if (!it || (it.prioridade || "") === k) return;
     const max = items.filter((i) => (i.prioridade || "") === k).reduce((m, i) => Math.max(m, Number(i.ordem) || 0), 0);
-    try { await col.doc(id).update({ prioridade: k, ordem: max + 1, atualizadoEm: stamp() }); toast(k ? "Movida para " + k : "Voltou para triagem"); }
+    try { await col.doc(id).update({ prioridade: k, ordem: max + 1, atualizadoEm: stamp() }); toast(k ? "Movida a " + k : "Devuelta a triaje"); }
     catch (e) { writeFailed(e); }
   }
   async function move(id, dir) {
@@ -684,11 +684,11 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     const n = blkSeq++;
     const row = document.createElement("div");
     row.className = "blk";
-    row.innerHTML = `<input class="bd" type="date" id="b-data-${n}" aria-label="Dia" value="${esc(s.data || "")}">
-      <input type="time" id="b-ini-${n}" aria-label="Início" value="${esc(s.inicio || "")}">
-      <input type="time" id="b-fim-${n}" aria-label="Fim" value="${esc(s.fim || "")}">
+    row.innerHTML = `<input class="bd" type="date" id="b-data-${n}" aria-label="Día" value="${esc(s.data || "")}">
+      <input type="time" id="b-ini-${n}" aria-label="Inicio" value="${esc(s.inicio || "")}">
+      <input type="time" id="b-fim-${n}" aria-label="Fin" value="${esc(s.fim || "")}">
       <input type="number" id="b-h-${n}" aria-label="Horas" min="0" step="0.5" inputmode="decimal" value="${s.horas ? esc(s.horas) : ""}">
-      <button type="button" class="icon-btn" data-rm aria-label="Remover bloco">✕</button>`;
+      <button type="button" class="icon-btn" data-rm aria-label="Quitar bloque">✕</button>`;
     return row;
   }
   function readBlocks() {
@@ -709,7 +709,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     });
     const list = readBlocks();
     const t = list.reduce((x, s) => x + sDur(s), 0);
-    $("#blk-total").textContent = list.length ? list.length + (list.length === 1 ? " bloco · " : " blocos · ") + fmtH(t) : "Nenhum bloco";
+    $("#blk-total").textContent = list.length ? list.length + (list.length === 1 ? " bloque · " : " bloques · ") + fmtH(t) : "Ningún bloque";
   }
   $("#blk-list").addEventListener("input", syncBlocks);
   $("#blk-list").addEventListener("click", (ev) => {
@@ -726,7 +726,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
   function openEditor(id) {
     editingId = id || null;
     const it = id ? items.find((i) => i.id === id) : null;
-    $("#dlg-title").textContent = it ? (canWrite ? "Editar atividade" : "Detalhes da atividade") : "Nova atividade";
+    $("#dlg-title").textContent = it ? (canWrite ? "Editar actividad" : "Detalle de la actividad") : "Nueva actividad";
     F("titulo").value = it ? it.titulo || "" : "";
     F("descricao").value = it ? it.descricao || "" : "";
     F("tipo").value = it ? it.tipo || "reuniao" : "reuniao";
@@ -740,7 +740,7 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     (ss.length ? ss : [{}]).forEach((s) => bl.appendChild(blkRow(s)));
     $("#form").querySelectorAll("input,select,textarea,#blk-add,[data-rm]").forEach((el) => { el.disabled = !canWrite; });
     $("#btn-save").hidden = !canWrite;
-    const del = $("#btn-del"); del.hidden = !it || !canWrite; del.classList.remove("armed"); del.textContent = "Excluir";
+    const del = $("#btn-del"); del.hidden = !it || !canWrite; del.classList.remove("armed"); del.textContent = "Eliminar";
     syncBlocks();
     $("#dlg").showModal();
     if (canWrite) setTimeout(() => F("titulo").focus(), 30);
@@ -750,9 +750,9 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     ev.preventDefault();
     if (!canWrite) return;
     const titulo = F("titulo").value.trim();
-    if (!titulo) { F("titulo").focus(); toast("Dê um nome para a atividade."); return; }
+    if (!titulo) { F("titulo").focus(); toast("Ponle un nombre a la actividad."); return; }
     const raw = [...document.querySelectorAll("#blk-list .blk")].map((r) => [...r.querySelectorAll("input")].map((i) => i.value));
-    if (raw.some(([, a, b]) => a && b && toMin(b) <= toMin(a))) { toast("Em cada bloco, o fim precisa ser depois do início."); return; }
+    if (raw.some(([, a, b]) => a && b && toMin(b) <= toMin(a))) { toast("En cada bloque, el fin debe ser posterior al inicio."); return; }
     const sessoes = readBlocks();
     const prev = editingId ? items.find((i) => i.id === editingId) : null;
     const prioridade = F("prioridade").value;
@@ -766,29 +766,29 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     const btn = $("#btn-save"); btn.disabled = true;
     try {
       if (prev) await col.doc(prev.id).set(body); else await col.add(body);
-      $("#dlg").close(); toast(prev ? "Atividade atualizada" : "Atividade lançada");
+      $("#dlg").close(); toast(prev ? "Actividad actualizada" : "Actividad registrada");
     } catch (e) { writeFailed(e); }
     finally { btn.disabled = false; }
   });
   $("#btn-del").addEventListener("click", async (ev) => {
     const b = ev.currentTarget;
-    if (!b.classList.contains("armed")) { b.classList.add("armed"); b.textContent = "Confirmar exclusão"; setTimeout(() => { b.classList.remove("armed"); b.textContent = "Excluir"; }, 4000); return; }
-    try { await col.doc(editingId).delete(); $("#dlg").close(); toast("Atividade excluída"); } catch (e) { writeFailed(e); }
+    if (!b.classList.contains("armed")) { b.classList.add("armed"); b.textContent = "Confirmar eliminación"; setTimeout(() => { b.classList.remove("armed"); b.textContent = "Eliminar"; }, 4000); return; }
+    try { await col.doc(editingId).delete(); $("#dlg").close(); toast("Actividad eliminada"); } catch (e) { writeFailed(e); }
   });
   $("#dlg-close").addEventListener("click", () => $("#dlg").close());
   $("#btn-cancel").addEventListener("click", () => $("#dlg").close());
   $("#btn-new").addEventListener("click", () => openEditor(null));
 
-  // ---------- resumo para colar em e-mail / Teams ----------
+  // ---------- resumen para pegar en correo / Teams ----------
   function summary() {
     const open = items.filter((i) => i.status !== "concluida");
     const { start, end } = range();
     const L = periodLoad(start, end);
-    const lines = ["Pauta de atividades · Diretoria Global de Dados & Analítica (DDI)", "Período " + ddmm(start) + " a " + ddmm(end) + ": " + fmtH(L.total) + " comprometidas, " + fmtH(L.meet) + " em reuniões", ""];
+    const lines = ["Pauta de actividades · Dirección Global de Datos & Analítica (DDI)", "Período " + ddmm(start) + " al " + ddmm(end) + ": " + fmtH(L.total) + " comprometidas, " + fmtH(L.meet) + " en reuniones", ""];
     PRIOS.slice(1).concat(PRIOS[0]).forEach((p) => {
       const list = open.filter((i) => (i.prioridade || "") === p.k).sort(byOrder);
       if (!list.length) return;
-      lines.push(p.k ? p.label : "Aguardando priorização");
+      lines.push(p.k ? p.label : "Pendientes de priorizar");
       list.forEach((i) => lines.push("- " + i.titulo + " (" + when(i) + (dur(i) ? ", " + fmtH(dur(i)) : "") + ")" + (i.notaDiretor ? " → " + i.notaDiretor : "")));
       lines.push("");
     });
@@ -797,8 +797,8 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
   $("#btn-copy").addEventListener("click", () => {
     const text = summary();
     const box = $("#copy-box");
-    const fallback = () => { box.hidden = false; box.innerHTML = `<textarea class="copy-fallback" id="copy-text" readonly></textarea>`; const ta = $("#copy-text"); ta.value = text; ta.focus(); ta.select(); toast("Selecione o texto e copie"); };
-    try { navigator.clipboard.writeText(text).then(() => { box.hidden = true; toast("Resumo copiado"); }, fallback); }
+    const fallback = () => { box.hidden = false; box.innerHTML = `<textarea class="copy-fallback" id="copy-text" readonly></textarea>`; const ta = $("#copy-text"); ta.value = text; ta.focus(); ta.select(); toast("Selecciona el texto y cópialo"); };
+    try { navigator.clipboard.writeText(text).then(() => { box.hidden = true; toast("Resumen copiado"); }, fallback); }
     catch (e) { fallback(); }
   });
 
@@ -836,22 +836,22 @@ textarea.copy-fallback { width: 100%; min-height: 160px; font-family: var(--mono
     setPriority(dragId, c.dataset.col);
   });
 
-  // ---------- conexão ----------
+  // ---------- conexión ----------
   render();
   (async () => {
     const claude = window.claude;
-    if (!claude || !claude.use) { loaded = true; $("#sync-hint").textContent = "Sem conexão com os dados"; render(); return; }
+    if (!claude || !claude.use) { loaded = true; $("#sync-hint").textContent = "Sin conexión con los datos"; render(); return; }
     const [d, user] = await Promise.all([claude.use("db"), claude.use("user")]);
     db = d;
     if (user) { try { const w = await user.can("data.write"); if (w === false) canWrite = false; } catch (e) {} }
-    if (!db) { loaded = true; canWrite = false; $("#sync-hint").textContent = "Sem conexão com os dados"; render(); return; }
+    if (!db) { loaded = true; canWrite = false; $("#sync-hint").textContent = "Sin conexión con los datos"; render(); return; }
     col = db.collection("atividades");
     col.onSnapshot((snap) => {
       items = snap.docs.map((doc) => { const d = doc.data(); const it = Object.assign({ id: doc.id }, d); if (Array.isArray(d.sessoes)) it.sessoes = d.sessoes.map((s) => Object.assign({}, s)); return it; });
       loaded = true;
-      $("#sync-hint").textContent = "Sincronizado · alterações aparecem para todos em tempo real";
+      $("#sync-hint").textContent = "Sincronizado · los cambios se ven para todos en tiempo real";
       render();
-    }, () => { $("#sync-hint").textContent = "Conexão interrompida. Recarregue a página."; });
+    }, () => { $("#sync-hint").textContent = "Conexión interrumpida. Recarga la página."; });
   })();
 })();
 </script>
